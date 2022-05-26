@@ -5,6 +5,7 @@
 if len(nums) != len(set(nums)): #set() prevents redundancy
     return True
 
+#============================================================================================================================================================================================================================================
 
 
 # 2. Valid Anagram
@@ -28,11 +29,13 @@ return Counter(s) == Counter(t)
 return sorted(s)==sorted(t)  # use seaching algorithm time complexity O(n^2)
 
 
+#============================================================================================================================================================================================================================================
+
 
 # 3. Two Sum
-# we're looking for indices, so sorting is not necessary. Mostly using dictionary (hastable) helps.
+# we're looking for indices, so sorting is not necessary. Mostly using dictionary (hastable) helps. More information in  ( https://leetcode.com/problems/two-sum/discuss/737092/Sum-MegaPost-Python3-Solution-with-a-detailed-explanation )
 
-def t_s(nums,target):
+def Two_sum(nums,target):
     seen={}
     for index , value in enumerate (nums) :    # enumerate gives U both index and value of element
         remain = target - nums[index]          # Since remaining + value = target
@@ -41,6 +44,10 @@ def t_s(nums,target):
         else:
             seen[value]=index                  # Otherwise, add current number to dictunary
 
-
 nums=[11,2,15,7]
-t_s(nums,9)
+Two_sum(nums,9)
+
+
+#============================================================================================================================================================================================================================================
+
+# 4.  Group Anagrams
