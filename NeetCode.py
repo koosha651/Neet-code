@@ -33,7 +33,8 @@ return sorted(s)==sorted(t)  # use seaching algorithm time complexity O(n^2)
 
 
 # 3. Two Sum
-# we're looking for indices, so sorting is not necessary. Mostly using dictionary (hastable) helps. More information in  ( https://leetcode.com/problems/two-sum/discuss/737092/Sum-MegaPost-Python3-Solution-with-a-detailed-explanation )
+# we're looking for indices, so sorting is not necessary. Mostly using dictionary (hastable) helps.
+# More information in  ( https://leetcode.com/problems/two-sum/discuss/737092/Sum-MegaPost-Python3-Solution-with-a-detailed-explanation )
 
 def Two_sum(nums,target):
     seen={}
