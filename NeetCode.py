@@ -30,3 +30,4 @@ return sorted(s)==sorted(t)  # use seaching algorithm time complexity O(n^2)
 
 
 # 3. Two Sum
+# we're looking for indices, so sorting is not necessary. Mostly using dictionary (hastable) helps.
