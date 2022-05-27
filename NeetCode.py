@@ -49,7 +49,22 @@ Two_sum(nums,9)
 
 
 #=============================================================================================================================================================================
-https://www.youtube.com/watch?v=zTHtUm4AtcA
+
 
 # 4.  Group Anagrams
-# Use hashmaps
+# Need to know Defaultdic: https://www.youtube.com/watch?v=zTHtUm4AtcA
+
+Name= 'Hashing technique'                      from collections import defaultdict
+                                               
+seen={}                                        Name= 'Hashing technique'    
+for char in name:                              seen={} 
+    if char not in seen:                       
+                                               
+        seen[c]=1                              seen=defaultdict(int)   or    seen=defaultdict(lambda:0) # gives the intial value      
+       
+    else:                                      for char in name:
+        seen[c]+=1                                  seen[c]+=1
+        
+output: {'K': 1, 'o': 2, 's': 1, 'h': 2, 'a': 3, ' ': 1, 'S': 1, 'r': 1, 'i': 2, 'f': 1, 'n': 1}
+
+
