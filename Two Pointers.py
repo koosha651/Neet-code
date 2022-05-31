@@ -36,3 +36,26 @@ def alphaNum(c):                                    # Could write own alpha-nume
 
 
 #=============================================================================================================================================================================
+
+
+# 2. Two Sum II - Input Array Is Sorted
+#                                                        Dictionary: O(n) time       O(n) space
+# we could solve like Two sum in Arrays & Hashing but: Two pointers: O(n) time       O(1) space  ✔
+#                                                     Binary search: O(nlogn) time   O(1) space
+
+numbers = [2,3,4]
+target = 6
+
+def two_sum(num,t):
+
+    l,r = 0,len(numbers)-1
+    while l<r:
+        cur_sum = num[l] + num[r]
+        if cur_sum < t:
+            l+=1
+        elif cur_sum > t:
+            r-=1
+        else:
+            return (l+1,r+1)
+
+#=============================================================================================================================================================================
