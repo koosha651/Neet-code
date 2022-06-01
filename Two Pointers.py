@@ -64,6 +64,7 @@ def two_sum(num,t):
  # By sorting the Array O(n log n) for find the First number and use 2 loops to find the two Sum by two pointers, total time complexity will be : O (n log n) + O (n^2) which
  # will be O (n^2)
 
+Input: nums = [-1,0,1,2,-1,-4]
 
 def threeSum(self, nums: List[int]) -> List[List[int]]:
     res=[]
@@ -89,3 +90,5 @@ def threeSum(self, nums: List[int]) -> List[List[int]]:
                     l+=1
 
     return res
+    
+Output: [[-1,-1,2],[-1,0,1]]
