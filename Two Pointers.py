@@ -83,12 +83,14 @@ def threeSum(self, nums: List[int]) -> List[List[int]]:
                 r-=1
             else:
                 res.append([nums[i] , nums[l] , nums[r]]) # we ahve to print the answer in a List
+
                 # now we have to update our pointers to examin other combination. E.g [-2 ,-2, 0 , 0, 2, 2] in this array we can update two pointers but that is not necessary,
                 # so we only update the Left pointers and if the current 3sum has not change, it will automaticly use the previous If statement to update the Right pointer
+
                 l+=1
                 while l < r and nums[l] == nums[l-1]:
                     l+=1
 
     return res
-    
+
 Output: [[-1,-1,2],[-1,0,1]]
