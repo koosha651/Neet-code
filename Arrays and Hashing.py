@@ -55,21 +55,21 @@ Two_sum(nums,9)
 # Need to know Defaultdic: https://www.youtube.com/watch?v=zTHtUm4AtcA
 
 Name= 'Hashing technique'                      from collections import defaultdict
-                                               
-seen={}                                        Name= 'Hashing technique'    
-for char in name:                              seen={} 
-    if char not in seen:                       
-                                               
-        seen[c]=1                              seen=defaultdict(int)   or    seen=defaultdict(lambda:0) # gives the intial value      
-       
+
+seen={}                                        Name= 'Hashing technique'
+for char in name:                              seen={}
+    if char not in seen:
+
+        seen[char]=1                           seen=defaultdict(int)   or    seen=defaultdict(lambda:0) # gives the intial value
+
     else:                                      for char in name:
-        seen[c]+=1                                  seen[c]+=1
-        
+        seen[char]+=1                               seen[char]+=1
+
 output: {'K': 1, 'o': 2, 's': 1, 'h': 2, 'a': 3, ' ': 1, 'S': 1, 'r': 1, 'i': 2, 'f': 1, 'n': 1}
 
 
 # for soving this problem: we creat a hashmap and count the number of each charter in each word like eat={'e':1,'a':1,'t':1}then add words with same combination such as 'ate'.
-# then we use{'e':1,'a':1,'t':1} as key and stor the words as values() in our dictunary. the time complexity would be O(m.n) whcih 'm' is totalnumber of input string, 'n' is 
+# then we use{'e':1,'a':1,'t':1} as key and stor the words as values() in our dictunary. the time complexity would be O(m.n) whcih 'm' is totalnumber of input string, 'n' is
 # avarge len of each word.
 
 def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
@@ -77,15 +77,15 @@ def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         res=defaultdict(list) #mapping the chracter count of ech word in our array , also the default value is 'list'
         for word in strs:
             count=[0]*26   #opening 26 zeros for each 26 alphabet: a...z
-            
+
             for token in word:                    #a=80 ->0, 80 - 80 =0   b=81 ->1, 81 - 80 =0
-                count[ord(token) - ord('a')]+=1   # we are just counting how many charecter we have  
-            res[tuple(count)].append(word)        # add the 
-            
+                count[ord(token) - ord('a')]+=1   # we are just counting how many charecter we have
+            res[tuple(count)].append(word)        # add the
+
         return res.values()
-        
+
 
 #=============================================================================================================================================================================
-            
+
 
 # 5.
