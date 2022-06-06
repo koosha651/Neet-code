@@ -95,3 +95,25 @@ def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
  [1]   , [2] , [3] , [4] , [5], [6]
 =====================================
 [100]  , [2] , [1] ,  [] , []  ,  []
+
+
+
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        count = {}  # Use hashmam to count the occurance of element
+        freq = [[] for i in range(len(nums) + 1)] # has exact length of the input array, the indexes represent number of occurance and the value are the lsit of number
+
+        for n in nums:
+            count[n] = 1 + count.get(n, 0)
+        for n, c in count.items():
+            freq[c].append(n)   # our output right here is [[], [3], [], [1, 2], [], [], [], []] and we have to go through the array
+
+
+        res = []
+        for i in range(len(freq) - 1, 0, -1):  # we have to start from the last index and go to '0' index with '-1' step as decrementer
+            for n in freq[i]:
+                res.append(n)
+                if len(res) == k:
+                    return res
+
+        # O(n) the time complexity
