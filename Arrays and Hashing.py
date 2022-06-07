@@ -122,7 +122,7 @@ class Solution:
 
  6. Product of Array Except Self
 
- # see the video.
+ # see the video. https://www.youtube.com/watch?v=bNvIQI2wAjk
 =================================
 |       |       |       |       |
 |   1   |   2   |   3   |   4   |
