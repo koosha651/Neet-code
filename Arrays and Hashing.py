@@ -1,13 +1,13 @@
 # NeetCode Challenge
 # Solving Problems from NeetCode website, Arrays & Hashing
 
-# 1. Contains Duplicate (https://leetcode.com/problems/contains-duplicate/submissions/)
+ 1. Contains Duplicate (https://leetcode.com/problems/contains-duplicate/submissions/)
 if len(nums) != len(set(nums)): #set() prevents redundancy
     return True
 
 #=============================================================================================================================================================================
 
-# 2. Valid Anagram
+ 2. Valid Anagram
 # we should create 2 hashmaps and the total time complexity will be O(S + T) which is the iteration in these tow hashmaps. **Downside: potential high memory usage**
 
 
@@ -31,7 +31,7 @@ return sorted(s)==sorted(t)  # use seaching algorithm time complexity O(n^2)
 #=============================================================================================================================================================================
 
 
-# 3. Two Sum
+ 3. Two Sum
 # we're looking for indices, so sorting is not necessary. Mostly using dictionary (hastable) helps.
 # More information in  ( https://leetcode.com/problems/two-sum/discuss/737092/Sum-MegaPost-Python3-Solution-with-a-detailed-explanation )
 
@@ -51,7 +51,7 @@ Two_sum(nums,9)
 #=============================================================================================================================================================================
 
 
-# 4.  Group Anagrams
+ 4.  Group Anagrams
 # Need to know Defaultdic: https://www.youtube.com/watch?v=zTHtUm4AtcA
 
 Name= 'Hashing technique'                      from collections import defaultdict
@@ -88,7 +88,7 @@ def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
 #=============================================================================================================================================================================
 
 
-# 5. Top K Frequent Elements
+ 5. Top K Frequent Elements
 
 # There are several methods to solve this problem such as heap max O(k log n) , bucket sort O(n). in Bucket sort the first row of array represent the number of occurance of
 # each element, and the second row is the elements whit the same number of occurance. For Array like : [1,2,1,1,100,2] we have:
@@ -119,3 +119,5 @@ class Solution:
         # O(n) the time complexity also search for Bucket sort
 
 #=============================================================================================================================================================================
+
+ 6.
