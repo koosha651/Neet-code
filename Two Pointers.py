@@ -71,21 +71,22 @@ def threeSum(self, nums: List[int]) -> List[List[int]]:
     nums.sorted()         # The time complexity of sorting the array:  O(n log n)
 
     for index , value in enumerate(nums):
-        if i > 0 and nums[index] = nums[index-1]:   # after sorting, check if the previous number are the same
+        if index > 0 and nums[index] == nums[index-1]:   # after sorting, check if the previous number are the same, also check if 'i' will not be a first position
             continue
 
-        l,r = i+1 , len(nums)-1      # define two Pointers
+        l,r = index+1 , len(nums)-1      # define two Pointers
         while l<r:          # check for each time to Pointers not pass from eachother
-            crt_Sum = nums[i] + nums[l] + nums[r]   # current sum of 3 numbers and then check whether it bigger or smaller than 0.
+            crt_Sum = nums[index] + nums[l] + nums[r]   # current sum of 3 numbers and then check whether it bigger or smaller than 0.
             if crt_Sum < 0:
                 l+=1
             elif crt_Sum > 0:
                 r-=1
             else:
-                res.append([nums[i] , nums[l] , nums[r]]) # we ahve to print the answer in a List
+                res.append([nums[index] , nums[l] , nums[r]]) # we ahve to print the answer in a List
 
                 # now we have to update our pointers to examine other combinations. E.g [-2 ,-2, 0, 0, 2, 2] in this array we can update two pointers but that is not necessary,
-                # so we only update the Left pointers and if the current 3sum has not changed, it will automatically use the previous If statement to update the Right pointer
+                # so we only update the Left pointers and if the current 3sum has not changed, it will automatically use the previous If statement in the while loop
+                # to update the Right pointer
 
                 l+=1
                 while l < r and nums[l] == nums[l-1]:
