@@ -68,13 +68,13 @@ for char in name:                              seen={}
 output: {'K': 1, 'o': 2, 's': 1, 'h': 2, 'a': 3, ' ': 1, 'S': 1, 'r': 1, 'i': 2, 'f': 1, 'n': 1}
 
 
-# for soving this problem: we creat a hashmap and count the number of each charter in each word like eat={'e':1,'a':1,'t':1}then add words with same combination such as 'ate'.
-# then we use{'e':1,'a':1,'t':1} as key and stor the words as values() in our dictunary. the time complexity would be O(m.n) whcih 'm' is totalnumber of input string, 'n' is
-# avarge len of each word.
+# for solving this problem: we create a hashmap and count the number of each charter in each word like eat={'e':1,'a':1,'t':1}then add words with the same combination
+# such as 'ate'. then we use{'e':1,'a':1,'t':1} as key and store the words as values() in our dictionary. the time complexity would be O(m.n) which 'm' is the total
+# number of the input strings, 'n' isavarge len of each word.
 
 def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         from collections import defaultdict
-        res=defaultdict(list) #mapping the chracter count of ech word in our array , also the default value is 'list'
+        res=defaultdict(list) #mapping the character count of each word in our array , also the default value is 'list'
         for word in strs:
             count=[0]*26   #opening 26 zeros for each 26 alphabet: a...z
 
