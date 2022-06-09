@@ -91,7 +91,7 @@ def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
 # 5. Top K Frequent Elements
 
 # There are several methods to solve this problem such as heap max O(k log n) , bucket sort O(n). in Bucket sort the first row of array represent the number of occurance of
-# each element, and the second row is the elements whit the same number of occurance. For Array like : [1,2,1,1,100,2] we have:
+# each element, and the second row is the elements whit the same number of occurance. For Array like [1,2,1,1,100,2] we have:
  [1]   , [2] , [3] , [4] , [5], [6]
 =====================================
 [100]  , [2] , [1] ,  [] , []  ,  []
