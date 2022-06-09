@@ -1,13 +1,13 @@
 # NeetCode Challenge
 # Solving Problems from NeetCode website, Arrays & Hashing
 
-# 1. Contains Duplicate (https://leetcode.com/problems/contains-duplicate/submissions/)
+ 1. Contains Duplicate (https://leetcode.com/problems/contains-duplicate/submissions/)
 if len(nums) != len(set(nums)): #set() prevents redundancy
     return True
 
 #=============================================================================================================================================================================
 
-# 2. Valid Anagram
+ 2. Valid Anagram
 # we should create 2 hashmaps and the total time complexity will be O(S + T) which is the iteration in these tow hashmaps. **Downside: potential high memory usage**
 
 
@@ -31,7 +31,7 @@ return sorted(s)==sorted(t)  # use seaching algorithm time complexity O(n^2)
 #=============================================================================================================================================================================
 
 
-# 3. Two Sum
+ 3. Two Sum
 # we're looking for indices, so sorting is not necessary. Mostly using dictionary (hastable) helps.
 # More information in  ( https://leetcode.com/problems/two-sum/discuss/737092/Sum-MegaPost-Python3-Solution-with-a-detailed-explanation )
 
@@ -51,7 +51,7 @@ Two_sum(nums,9)
 #=============================================================================================================================================================================
 
 
-# 4.  Group Anagrams
+ 4.  Group Anagrams
 # Need to know Defaultdic: https://www.youtube.com/watch?v=zTHtUm4AtcA
 
 Name= 'Hashing technique'                      from collections import defaultdict
@@ -88,11 +88,12 @@ def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
 #=============================================================================================================================================================================
 
 
-# 5. Top K Frequent Elements
+ 5. Top K Frequent Elements
 
-# There are several methods to solve this problem such as heap max O(k log n) , bucket sort O(n). in Bucket sort the first row of array represent the number of occurance of
-# each element, and the second row is the elements whit the same number of occurance. For Array like [1,2,1,1,100,2] we have:
- [1]   , [2] , [3] , [4] , [5], [6]
+# There are several methods to solve this problem such as heap max O(k log n), and bucket sort O(n). in Bucket sort the first row of the array represents the number of 
+# occurrences of each element, and the second row is the elements whit the same number of occurrence. For Array like : [1 , 2, 1, 1, 100, 2] we have:
+
+ [1]   , [2] , [3] , [4] , [5],  [6]
 =====================================
 [100]  , [2] , [1] ,  [] , []  ,  []
 
@@ -117,3 +118,42 @@ class Solution:
                     return res
 
         # O(n) the time complexity also search for Bucket sort
+
+#=============================================================================================================================================================================
+
+ 6. Product of Array Except Self
+
+ # see the video. https://www.youtube.com/watch?v=bNvIQI2wAjk
+=================================
+|       |       |       |       |
+|   1   |   2   |   3   |   4   |
+|       |       |       |       |
+=================================
+|       |       |       |       |
+|   1   |   1   |   2   |   6   |      prefix   O(n)
+|       |       |       |       |
+=================================
+|       |       |       |       |
+|   24  |  12   |   4   |   1   |     postfix   O(n)
+|       |       |       |       |
+=================================
+
+|   24  |  12   |   8   |   6   |     postfix + prefix =  O(2n) =O(n)
+
+
+nums = [1,2,3,4]
+ class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        res = [1] * (len(nums))  #create array with same number of position like nums, and initial value of 1: [1 , 1 , 1 , 1 ]
+
+        prefix = 1              # define initial default value for prefix
+        for i in range(len(nums)):
+            res[i] = prefix                  # [1, 1, 2, 6]
+            prefix *= nums[i]
+        postfix = 1             # define initial default value for postfix
+        for i in range(len(nums) - 1, -1, -1):          # starting from end of array and decrementer by 1
+            res[i] *= postfix           #for prevents over write we multiple the postfix to previous List
+            postfix *= nums[i]
+        return res
+
+output: [24, 12, 8, 6]
