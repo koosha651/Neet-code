@@ -2,7 +2,7 @@
 # NeetCode Challenge
 # Solving Problems from NeetCode website, Tow Pointers
 
- 1. Valid Palindrome
+# 1. Valid Palindrome
 # Two ways to solve the problem. First method use extra memory by building 'newstr'
 
 s = "A man, a plan, a canal: Panama"
@@ -38,7 +38,7 @@ def alphaNum(c):                                    # Could write own alpha-nume
 #=============================================================================================================================================================================
 
 
- 2. Two Sum II - Input Array Is Sorted
+# 2. Two Sum II - Input Array Is Sorted
 #                                                           Dictionary: O(n) time       O(n) space
 # we could solve like Two sum in Arrays & Hashing but:      Two pointers: O(n) time       O(1) space  ✔
 #                                                           Binary search: O(nlogn) time   O(1) space
@@ -60,7 +60,7 @@ def two_sum(num,t):
 
 #=============================================================================================================================================================================
 
-  3. 3Sum
+ # 3. 3Sum
  # By sorting the Array O(n log n) for find the First number and use 2 loops to find the two Sum by two pointers, total time complexity will be : O (n log n) + O (n^2) which
  # will be O (n^2)
 
@@ -84,8 +84,8 @@ def threeSum(self, nums: List[int]) -> List[List[int]]:
             else:
                 res.append([nums[i] , nums[l] , nums[r]]) # we ahve to print the answer in a List
 
-                # now we have to update our pointers to examin other combination. E.g [-2 ,-2, 0 , 0, 2, 2] in this array we can update two pointers but that is not necessary,
-                # so we only update the Left pointers and if the current 3sum has not change, it will automaticly use the previous If statement to update the Right pointer
+                # now we have to update our pointers to examine other combinations. E.g [-2 ,-2, 0, 0, 2, 2] in this array we can update two pointers but that is not necessary,
+                # so we only update the Left pointers and if the current 3sum has not changed, it will automatically use the previous If statement to update the Right pointer
 
                 l+=1
                 while l < r and nums[l] == nums[l-1]:
