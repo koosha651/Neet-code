@@ -2,7 +2,7 @@
 # NeetCode Challenge
 # Solving Problems from NeetCode website, Tow Pointers
 
-# 1. Valid Palindrome
+1. Valid Palindrome
 # Two ways to solve the problem. First method use extra memory by building 'newstr'
 
 s = "A man, a plan, a canal: Panama"
@@ -38,7 +38,7 @@ def alphaNum(c):                                    # Could write own alpha-nume
 #=============================================================================================================================================================================
 
 
-# 2. Two Sum II - Input Array Is Sorted
+2. Two Sum II - Input Array Is Sorted
 #                                                           Dictionary: O(n) time       O(n) space
 # we could solve like Two sum in Arrays & Hashing but:      Two pointers: O(n) time       O(1) space  ✔
 #                                                           Binary search: O(nlogn) time   O(1) space
@@ -60,7 +60,7 @@ def two_sum(num,t):
 
 #=============================================================================================================================================================================
 
- # 3. 3Sum
+3. 3Sum
  # By sorting the Array O(n log n) for find the First number and use 2 loops to find the two Sum by two pointers, total time complexity will be : O (n log n) + O (n^2) which
  # will be O (n^2)
 
