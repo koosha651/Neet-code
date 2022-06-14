@@ -6,6 +6,7 @@
 things we iterate over sequentially: 
     * the contiguous sequence of element
     * string, arrays, linked list
+    
  type of question that is usually asked is:
     * asked about min, max, longest, shortest, whether contain 
     * maybe we have to calculate something 
@@ -43,4 +44,25 @@ Output: 5
 
 #=============================================================================================================================================================================
 
-2.
+2. Longest Substring Without Repeating Characters
+
+# using sliding window to reduce the time and memory to O(n)
+
+input: s = "abcabcbb"                                                                                       s = "abcabcbb"
+                                                                                                            chat = set()
+def lengthOfLongestSubstring(s: str) -> int:                                                                for i in range(len(s)):
+        charSet = set()    # use set() to prevent duolicate in sub set sequence
+        l = 0                                                                                                    chat.add(s[i])
+        res = 0                                                                                             print(chat)
+        
+        for r in range(len(s)):                                                                            Output: {'a', 'c', 'b'}
+            while s[r] in charSet:                                                                          
+                charSet.remove(s[l])                                                                    
+                l += 1                                                                  
+            charSet.add(s[r])                                                                           
+            res = max(res, r - l + 1)   #find the curent window size by 'r - l +1'                                                                   
+        return res
+
+Output: 3
+
+
