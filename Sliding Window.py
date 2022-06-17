@@ -67,3 +67,29 @@ Output: 3
 
 #=============================================================================================================================================================================
 3. Longest Repeating Character Replacement
+
+# we have to use hashmap to store the frequency of alphabet element. How we decide choose the dominet element depends on the most frequent element in our current window. Every
+# time we most evaluate this condition that: size of current window  - number of frequency of of top character < = k . If that was passed then we increment the right pointer 
+# unles increment left pointer. 
+
+input: s='ababba'
+
+def characterReplacement(self, s: str, k: int) -> int:
+        count = {}   # create hashmap to count the occurance of each element 
+        res = 0     # give us the longest sub-string 
+        
+        l = 0 #left pointer
+        
+        for r in range(len(s)):
+            count[s[r]] = 1 + count.get(s[r], 0)
+            
+            if (r - l + 1) - max(count.values()) > k:   #evaluate the condition and make sure its valid
+                count[s[l]] -= 1
+                l += 1
+            
+            res = max(res, r - l + 1)       #if it passed the condition choose the maximum lenght of substring
+        return res
+        
+output: 5       time complexity: O(26n) 26 position for 26 alphabet
+
+#=============================================================================================================================================================================
