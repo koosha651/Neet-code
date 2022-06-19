@@ -67,6 +67,9 @@ output:
 
 # As we read through the list, pop() each value and add it to the Stack. If we reach to an operator, the two previous number is going to remove from Stack and we are going
 # to do the operator on them, and then add the result to Stack
+
+# ** for the '/' and '-' it is important to replace their position at First and then do the operation on them.
+
 def evalRPN(tokens) -> int:
     stack=[]
 
