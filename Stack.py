@@ -82,9 +82,9 @@ def evalRPN(tokens) -> int:
             a, b = stack.pop() , stack.pop()
             stack.append(int(b / a))
         else:
-            stack.append(int(i))                    # if the charecter was not a operator, it will be a number which first convert it to intiger and append it to Stack 
+            stack.append(int(i))                    # if the charecter was not a operator, it will be a number which first convert it to intiger and append it to Stack
     return round(stack[0])
 
 
-t=["4","13","5","/","+"]
-evalRPN(t)
+
+#=============================================================================================================================================================================
