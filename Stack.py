@@ -62,3 +62,29 @@ output:
 
 
 #=============================================================================================================================================================================
+
+3. Evaluate Reverse Polish Notation
+
+# As we read through the list, pop() each value and add it to the Stack. If we reach to an operator, the two previous number is going to remove from Stack and we are going
+# to do the operator on them, and then add the result to Stack
+def evalRPN(tokens) -> int:
+    stack=[]
+
+    for i in tokens:
+        if i == '+':
+            stack.append(stack.pop() + stack.pop())
+        elif i == '-':
+            a, b = stack.pop() , stack.pop()
+            stack.append(b-a)
+        elif i == '*':
+            stack.append(stack.pop() * stack.pop())
+        elif i == '/':
+            a, b = stack.pop() , stack.pop()
+            stack.append(int(b / a))
+        else:
+            stack.append(int(i))                    # if the charecter was not a operator, it will be a number which first convert it to intiger and append it to Stack 
+    return round(stack[0])
+
+
+t=["4","13","5","/","+"]
+evalRPN(t)
