@@ -27,17 +27,38 @@ parentheses(s)
 output: False
 
 
-
 #=============================================================================================================================================================================
 
-  
+
 2.  Min Stack
 
-Input
-["MinStack","push","push","push","getMin","pop","top","getMin"]
-[[],[-2],[0],[-3],[],[],[],[]]
+input: ["MinStack","push","push","push","getMin","pop","top","getMin"]
+       [     []   , [-2] ,  [0] , [-3] ,   []   , []  , []  ,    []  ]
+
+class MinStack:
+
+    def __init__(self):
+        self.stack = []   # make one stack for storing values
+        self.minstack = []     # make one stack to store the minimum value on all numbers on the top of the stack
+
+    def push(self, val: int) -> None:
+        self.stack.append(val)
+        val= min(val , self.minstack[-1] if self.minstack else val)   #update the stack/ choose between curent value and value in minstack
+        self.minstack.append(val)
+
+    def pop(self) -> None:
+        self.stack.pop()
+        self.minstack.pop()
+
+    def top(self) -> int:
+        return self.stack[-1]
+
+    def getMin(self) -> int:
+        return self.minstack[-1]
 
 
-
-Output
+output:
 [null,null,null,null,-3,null,0,-2]
+
+
+#=============================================================================================================================================================================
