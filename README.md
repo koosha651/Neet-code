@@ -1,1 +1,1 @@
-# Personal Solution for NeetCode Challenge
+# Personal Solution for NeetCode Challenges
