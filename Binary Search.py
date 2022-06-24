@@ -89,6 +89,8 @@ the time complexity for each
 
 2. Koko Eating Bananas
 
+
+https://leetcode.com/problems/koko-eating-bananas/discuss/1705145/Python-BinarySearch-%2B-Optimizations-or-Explained
 # there are tow ways to solve this problem:     1) brute force algorithm             2) Binary search
 # 1) we are going to try every single value from one, all the way up until the max value of piles in array,like: [1, ...... , 11] and the time complexity is : O(max(p) * p)
 
