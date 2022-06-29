@@ -8,7 +8,11 @@ https://www.youtube.com/watch?v=7tCNu4CnjVc
 
 1.  Invert Binary Tree
 
-# the conceot is to visit every single node in the tree and then if each of these nodes has children, we must swap their children. So we can sove this problem with recursion as DFS
+# the conceot is to visit every single node in the tree and then if each of these nodes has children, we must swap their children. So we can sove this problem with recursion 
+# as DFS
+
+        
+Input: root = [4,2,7,1,3,6,9]
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -29,3 +33,7 @@ class Solution:
         self.invertTree(root.left)
         self.invertTree(root.right)
         return root
+        
+        
+Output: [4,7,2,9,6,3,1]
+#=============================================================================================================================================================================
