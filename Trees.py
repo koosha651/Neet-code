@@ -6,7 +6,7 @@ https://www.youtube.com/watch?v=7tCNu4CnjVc
 
 #=============================================================================================================================================================================
 
-1.  Invert Binary Tree
+1. Invert Binary Tree
 
 # the conceot is to visit every single node in the tree and then if each of these nodes has children, we must swap their children. So we can sove this problem with recursion 
 # as DFS
@@ -37,3 +37,5 @@ class Solution:
         
 Output: [4,7,2,9,6,3,1]
 #=============================================================================================================================================================================
+
+2. Maximum Depth of Binary Tree
