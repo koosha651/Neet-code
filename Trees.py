@@ -53,3 +53,8 @@ class Solution:
         if not root:
             return 0
         return 1 + max(self.maxDepth(root.left) , self.maxDepth(root.right))
+        
+
+#=============================================================================================================================================================================
+
+3. Diameter of Binary Tree
