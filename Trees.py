@@ -36,6 +36,18 @@ class Solution:
         
         
 Output: [4,7,2,9,6,3,1]
+
+
 #=============================================================================================================================================================================
 
 2. Maximum Depth of Binary Tree
+
+# there are 3 ways to solve:   1. recursive DFS         2. Iterative DFS            3. BFS
+
+#1. recursive DFS: in this method start from the root & and look for max for leaf and in each node '1 + max( DFS(left) , DFS(right) )'. Time complexity & memory usage = O(n)
+
+class Solution:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        if not root:
+            return 0
+        return 1 + max(self.maxDepth(root.left) , self.maxDepth(root.right))
