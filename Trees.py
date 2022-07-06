@@ -73,13 +73,12 @@ class Solution:
 
         def dfs(root):
             if not root:
-                return 0
-            left = dfs(root.left)
-            right = dfs(root.right)
+                 return 0
+            left = dfs(root.left)           # recurcivly find the hight of left sub tree
+            right = dfs(root.right)         # recurcivly find the hight of right sub tree
+            res[0] = max(res[0], left + right)          # calculating the diameter by adding two hight
             
-
-            res[0] = max(res[0], left + right)
-            return 1 + max (right , left)
+            return 1 + max (right , left)           #return the hights
 
         dfs (root)
         return res[0]
