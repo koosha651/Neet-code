@@ -87,14 +87,15 @@ class Solution:
 #=============================================================================================================================================================================
 4. Balanced Binary Tree
 
+#we recursivly start from bottum on the tree and return two value. first value is bolian value(true/false)that tell if the node is balance and the hight of the current node.
 
 class Solution:
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
         res = [0]
         ans = [0,1]
         def dfs(root):
-            if not root:
-                return 0
+            if not root: 
+                return [ ]
             
             right = dfs(root.right)
             left = dfs(root.left)
