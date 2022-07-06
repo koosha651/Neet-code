@@ -10,7 +10,7 @@ Binary search algorithm basic ideas:
 
 
 #=============================================================================================================================================================================
-  
+
 
 1. Binary search
 
@@ -83,28 +83,26 @@ matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]]
 target=3
 searchmatrix(matrix , target)
 
-Time complexity : O(log m + log k)
-the time complexity for each 
+# Time complexity : O(log m + log k)
+# the time complexity for each
 #============================================================================================================================================================================
 
 2. Koko Eating Bananas
 
-
-https://leetcode.com/problems/koko-eating-bananas/discuss/1705145/Python-BinarySearch-%2B-Optimizations-or-Explained
 # there are tow ways to solve this problem:     1) brute force algorithm             2) Binary search
 # 1) we are going to try every single value from one, all the way up until the max value of piles in array,like: [1, ...... , 11] and the time complexity is : O(max(p) * p)
 
-#  
+#
 Input: piles = [3,6,7,11], h = 8
 
 class Solution:
     def minEatingSpeed(self, piles: List[int], H: int) -> int:
         l, r = 1, max(piles)
         k = 0
-        
+
         while l <= r:
             m = (l + r) // 2
-            
+
             totalTime = 0
             for p in piles:
                 totalTime += ((p-1)//m) + 1
@@ -114,5 +112,5 @@ class Solution:
             else:
                 l = m + 1
         return k
-        
+
 #============================================================================================================================================================================
