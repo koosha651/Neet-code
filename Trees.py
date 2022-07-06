@@ -61,6 +61,9 @@ class Solution:
 
 # Using Recursive Approach to calculating the Diameter of Binary Tree
 # https://leetcode.com/problems/diameter-of-binary-tree/discuss/1515564/Python-Easy-to-understand-solution-w-Explanation
+# The depth of a node is the number of edges from the node to the tree's root node
+# The height of a node is the number of edges on the longest path from the node to a leaf.
+# The diameter (or width) of a tree is the number of nodes on the longest path between any two leaf nodes.
 
 
 class Solution:
