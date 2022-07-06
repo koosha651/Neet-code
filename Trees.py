@@ -85,3 +85,22 @@ class Solution:
 
 
 #=============================================================================================================================================================================
+4. Balanced Binary Tree
+
+
+class Solution:
+    def isBalanced(self, root: Optional[TreeNode]) -> bool:
+        res = [0]
+        ans = [0,1]
+        def dfs(root):
+            if not root:
+                return 0
+            
+            right = dfs(root.right)
+            left = dfs(root.left)
+            
+            res[0]= abs(left - right)
+            return res[0]
+            
+        dfs(root)
+        return True if res[0] in ans else False
