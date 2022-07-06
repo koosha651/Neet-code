@@ -77,7 +77,7 @@ class Solution:
             left = dfs(root.left)           # recurcivly find the hight of left sub tree
             right = dfs(root.right)         # recurcivly find the hight of right sub tree
             res[0] = max(res[0], left + right)          # calculating the diameter by adding two hight
-            
+
             return 1 + max (right , left)           #return the hights
 
         dfs (root)
@@ -91,17 +91,12 @@ class Solution:
 
 class Solution:
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
-        res = [0]
-        ans = [0,1]
+
         def dfs(root):
-            if not root: 
-                return [ ]
-            
-            right = dfs(root.right)
-            left = dfs(root.left)
-            
-            res[0]= abs(left - right)
-            return res[0]
-            
-        dfs(root)
-        return True if res[0] in ans else False
+            if not root: return [True, 0]       # since empty tree means balance then return true for that
+
+            left, right = dfs(root.left), dfs(root.right)       #allocate the value for left and right subtree
+            balanced = (left[0] and right[0] and       #check the difference of the two leaf will not be more that 1, also check if the left and right leaf are already Balanced
+                        abs(left[1] - right[1]) <= 1)
+            return [balanced, 1 + max(left[1], right[1])]
+        return dfs(root)[0]
