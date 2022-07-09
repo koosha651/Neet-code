@@ -107,7 +107,7 @@ class Solution:
 5. Same Tree
 
 # Ceck the structure of two Trees must be same 'number of Nodes' , 'number of left and right children' , 'the value of left and right children'. Also,We use DFS and recursive
-# method. the Time complexity is O(p , q). in worst case we have to travers both tress completely 
+# method. the Time complexity is O(p , q). in worst case we have to travers both tress completely
 
 class Solution:
     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
@@ -124,3 +124,26 @@ class Solution:
 
 6.  Subtree of Another Tree
 
+class Solution:
+    def isSubtree(self, s: TreeNode, t: TreeNode) -> bool:
+        if not t: return True
+        if not s: return False
+
+        if self.sameTree(s,t): return True
+
+        return (self.isSubtree(s.left , t) or
+                self.isSubtree(s.right, t))
+
+    def sameTree(self,s , t):
+
+        if not s and not t:
+            return True
+        if s and t and s.val == t.val:
+
+            return (self.sameTree(s.left , t.left) and
+                    self.sameTree(s.right, t.right))
+
+
+#=============================================================================================================================================================================
+
+7. Lowest Common Ancestor of a Binary Search Tree
