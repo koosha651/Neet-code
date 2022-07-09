@@ -95,7 +95,7 @@ class Solution:
         def dfs(root):  # this function return pair of values, boolean and the hight of a tree. [bolian value(whetherthe tree is balance or not) , current hight of Tree]
             if not root: return [True, 0]       # since empty tree means balance, then return true for that.
 
-            left, right = dfs(root.left), dfs(root.right)       #allocate the value for left and right subtree
+            left, right = dfs(root.left), dfs(root.right)       #allocate the value for hight of left and right subtree
             balanced = (left[0] and right[0] and    #check the difference of the two leaf will not be more that 1, also check if the left and right leaf are already Balanced
                         abs(left[1] - right[1]) <= 1)
             return [balanced, 1 + max(left[1], right[1])]
