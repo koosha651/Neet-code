@@ -100,3 +100,24 @@ class Solution:
                         abs(left[1] - right[1]) <= 1)
             return [balanced, 1 + max(left[1], right[1])]
         return dfs(root)[0]
+
+
+#=============================================================================================================================================================================
+
+5. Same Tree
+
+# Ceck the structure of two Trees must be same 'number of Nodes' , 'number of left and right children' , 'the value of left and right children'. Also,We use DFS and recursive
+# method. the Time complexity is O(p , q). in worst case we have to travers both tress completely 
+
+class Solution:
+    def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+        if not p and not  q:                    #if two trees are empty -----> True
+            return True
+        if not p or not q or p.val != q.val :           # if one of them is null // and neither of values are same then -------> False
+            return False
+        return (self.isSameTree(p.left , q.left) and            # (use recursive method) if the both of the Right subtree and left subtree are the same ----->  True
+                self.isSameTree(p.right, q.right))
+
+
+
+#=============================================================================================================================================================================
