@@ -147,3 +147,23 @@ class Solution:
 #=============================================================================================================================================================================
 
 7. Lowest Common Ancestor of a Binary Search Tree
+
+# be aware always the main root is LCA for all node. Each time we check two node with the current root and based on that will change the position root. ifone of the node will 
+# be equal to root, that node is the 
+class Solution:
+    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+        cur = root
+        
+        while cur:
+            
+            if p.val > cur.val and q.val > cur.val:
+                cur = cur.right
+                
+            elif p.val < cur.val and q.val < cur.val:
+                cur = cur.left
+            
+            else:
+                return cur
+                
+
+#=============================================================================================================================================================================
