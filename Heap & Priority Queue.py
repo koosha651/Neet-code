@@ -40,4 +40,6 @@ class KthLargest:
 
 2. Last Stone Weight
 
+# since we dealing with maximum value, need to implement max-Heap. In order to take list of array and turn them to max-heap it takes O(n). every time we get the max it takes
+# O(log n ). since python doesn't have Max-Heap, we multiple -1 into every element and get minimum amount.
  
