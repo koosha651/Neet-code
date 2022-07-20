@@ -13,4 +13,6 @@ arr[(2*k) + 2] will return right child
 # Main reason that use Heap is that we can do add\pop in O(log n) time and get the min value in O(1). using binary search take O(lon n) to sort and O(n) to add value to array.
 # 1: take number & add it ti min-Heap 
 # 2: use while loop whhich while the size of heap is greater than 'K' pop the min value
-# add number --(in)--> O(log n) time --(adding 'm' time)--> 
+# add number --(in)--> O(log n) time --(adding 'm' times)--> O(m log n) time
+# pop number --(in)--> O(log n) time --(pop 'k' times)--> O((n - k) log n) time
+
