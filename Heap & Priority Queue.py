@@ -43,6 +43,7 @@ class KthLargest:
 # since we dealing with maximum value, need to implement max-Heap. In order to take list of array and turn them to max-heap it takes O(n). every time we get the max it takes
 # O(log n ). since python doesn't have Max-Heap, we multiple -1 into every element and get minimum amount.
 
+Input = [2,7,4,1,8,1]
 class Solution:
     def lastStoneWeight(self, stones: List[int]) -> int:
         stones = [-s for s in stones]
@@ -51,11 +52,13 @@ class Solution:
         while len(stones) > 1:
             first = heapq.heappop(stones)
             second = heapq.heappop(stones)
-            if second > first:
+            if second > first:                              first = -8  second = -7   ------->  -7 > -8
                 heapq.heappush(stones, first - second)
 
         stones.append(0)
         return abs(stones[0])
+
+output = 1
 
 
 #=============================================================================================================================================================================
