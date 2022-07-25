@@ -31,9 +31,22 @@ def subsets(nums):
     
     res = []
     subset = []
+    
     def dfs(i):
-        if i >= len(nums):
-            res.append
+        if i >= len(nums):              # if we find out we are out of bounds
+            res.append(subset.copy())           # append the current subset to the result
+            return 
+        
+        # decision to include nums[i]
+        subset.append(nums[i])
+        dfs(i + 1)
+        
+        # decision NOT to include nums[i]
+        subset.pop()
+        dfs(i + 1)
+        
+     dfs(0)         # call the dfs function and give the value '0' to i 
+     return res    # return the result
     
     
     
