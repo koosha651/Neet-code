@@ -23,7 +23,7 @@ def subset(nums):
         output += [lst + [i] for lst in output]
     return output
 
-
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 for i in nums:
         res += [lst  for lst in res]            --------> return : [[], [], [], [], [], [], [], []]
 
