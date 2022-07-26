@@ -40,7 +40,7 @@ def subsets(nums):
 
     res = []
     subset = []
-    
+
     def dfs(i):
         if i >= len(nums):              # if we find out we are out of bounds
             res.append(subset.copy())           # append the current subset to the result
