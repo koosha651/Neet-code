@@ -16,7 +16,7 @@ Tries is useing for word validation
 class TrieNode:                         # build constractor for initialize with a base root
     def __init__(self):
         self.children = {}              # each node comes with it's own children. it can be 26 children
-        self.endOfNode = False          # mark the last single node as end of a word
+        self.endOfNode = False          # mark the last  single node as end of a word
 
 class Trie:
 
@@ -25,7 +25,7 @@ class Trie:
         self.root = TrieNode()          # initialize the class with a root
 
     def insert(self, word: str) -> None:
-        cur = self.root                 # initialize our current node to start from the root
+        cur = self.root                 # initialize our current node to start from the root 
 
         for c in word:                         # go trought every single charecter of the word and check 2 thing: does the charecter already exist or not
             if c not in cur.children:                    # if the charecter doesn't exist in our current hashmap,
@@ -53,3 +53,38 @@ class Trie:
         return True
 
 #=============================================================================================================================================================================
+
+
+class TrieNode:
+    
+    def __init__(self):
+        self.children = {}     # a :TrieNode
+        self.word = False 
+            
+
+class WordDictionary:
+
+    def __init__(self):
+        self.root = TrieNode()
+        
+
+    def addWord(self, word: str) -> None:
+        cur = self.root
+        for c in word:
+            if c not in cur.children:
+                cur.children[c] = TrieNode()
+            cur = cur.children[c]
+        cur.word = True              
+        
+
+    def search(self, word: str) -> bool:    # this part will be recursive
+        cur = self.root
+        
+        for c in word:
+            
+            
+            
+            if c not in cur.children :
+                return False
+            cur = cur.children[c]
+        return True
