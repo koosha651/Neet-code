@@ -16,7 +16,7 @@ BFS ----- > traversal -------> in a level by level manner                   DFS 
 
 #  first methods:
 
-nums = [1 ,2, 3]
+nums = [1 ,8, 3]
 def subset(nums):
     output = [[]]
     for i in nums:
