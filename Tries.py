@@ -10,10 +10,10 @@ Tries is useing for word validation
 # The child of each node must be unique so at most for each node we have 26 unique child wich represent the lenght of english alphabet. Also, we dealing with 4 sub-function
 # such as insert(), search(), startWith(). one of the advantage of using Tries is the startWith() function, which in compare to array reduce memory usage and time complexity
 
-# Create seperate class named TriesNode: include children, endOfWord
 
 
-class TrieNode:                         # build constractor for initialize with a base root
+
+class TrieNode:                         # Create seperate class named TriesNode: include children, endOfWord // build constractor for initialize with a base root
     def __init__(self):
         self.children = {}              # each node comes with it's own children. it can be 26 children
         self.endOfNode = False          # mark the last  single node as end of a word
