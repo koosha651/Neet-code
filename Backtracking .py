@@ -24,6 +24,9 @@ def subset(nums):
     return output
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+# foe more explaination
+
 for i in nums:
         res += [lst  for lst in res]            --------> return : [[], [], [], [], [], [], [], []]
 
@@ -39,19 +42,19 @@ for i in nums:
 def subsets(nums):
 
     res = []
-    subset = []
+    subset = []                 # create this function to have globaly access 
 
     def dfs(i):
         if i >= len(nums):              # if we find out we are out of bounds
-            res.append(subset.copy())           # append the current subset to the result
+            res.append(subset.copy())           # append the current subset to the result. Add copy version of subset because we frequently add value to subset
             return
 
         # decision to include nums[i]
         subset.append(nums[i])
-        dfs(i + 1)
+        dfs(i + 1)                      # recursively run dfs on the next element
 
-        # decision NOT to include nums[i]
-        subset.pop()
+        # decision NOT to include nums[i]       ,        basicly we skiping the nums[i]
+        subset.pop()            #  remove of pop the element that we just appended
         dfs(i + 1)
 
      dfs(0)         # call the dfs function and give the value '0' to i
