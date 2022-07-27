@@ -42,7 +42,7 @@ for i in nums:
 def subsets(nums):
 
     res = []
-    subset = []                 # create this function to have globaly access 
+    subset = []                 # create this function to have globaly access
 
     def dfs(i):
         if i >= len(nums):              # if we find out we are out of bounds
@@ -65,3 +65,32 @@ def subsets(nums):
 
 
 2. Combination Sum
+
+# we solve this question recursively. Also, define a additional function and pass few featurs.
+# 'i' represent the which candidate should be choosen / 'cur' represent the values that we already added / 'total' represent the total sum of values in 'cur' 
+
+nums = [5,3,6,7]
+target = 1
+
+def subset(candidates, target):
+    res = []
+
+    def dfs(i , cur , total):
+        if total == target:                  # first base case: if the total sum of value will equal to target
+            res.append(cur.copy())
+            return
+        if i >= len(candidates) or total > target:      # second base case: if total value greater that target or the numerator go out of bounds
+            return
+
+        # we have two decisions to make : include the value or not
+
+        cur.append(candidates[i])
+        dfs(i ,cur,total + candidates[i])      # since the total has been changed by adding candidates[i] to 'cur' we change the pass new total
+        cur.pop()
+        dfs(i+1 , cur , total)
+
+
+    dfs(0,[],0)
+    return res
+
+subset(nums,target)
