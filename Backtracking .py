@@ -99,7 +99,7 @@ subset(nums,target)
 
 #=============================================================================================================================================================================
 
-
+3. Permutations
 
 # we solve this question recursively.
 
@@ -111,7 +111,7 @@ def permute(nums):
     res = []        # create result list to add the permute number
 
     if len(nums) == 1:
-        return [nums]
+        return [nums.copy()]    # ** don not forget to put the copy version of nums
 
     for i in range(len(nums)):       # go throught the list and and pop the first elemet
         n = nums.pop(0)
@@ -120,10 +120,13 @@ def permute(nums):
         for perm in perms:
             perm.append(n)           # add 1 to each
 
-        res.extend(perms)
+        res.extend(perms)           # The extend() method adds all the elements of an iterable (list, tuple, string etc.) to the end of the list.
         nums.append(n)
     return res
 
-
-
 permute(nums)
+
+Output: [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
+
+
+#=============================================================================================================================================================================
