@@ -67,7 +67,7 @@ def subsets(nums):
 2. Combination Sum
 
 # we solve this question recursively. Also, define a additional function and pass few featurs.
-# 'i' represent the which candidate should be choosen / 'cur' represent the values that we already added / 'total' represent the total sum of values in 'cur' 
+# 'i' represent the which candidate should be choosen / 'cur' represent the values that we already added / 'total' represent the total sum of values in 'cur'
 
 nums = [5,3,6,7]
 target = 1
@@ -94,3 +94,36 @@ def subset(candidates, target):
     return res
 
 subset(nums,target)
+
+
+
+#=============================================================================================================================================================================
+
+
+
+# we solve this question recursively.
+
+
+nums = [1,2,3]
+
+def permute(nums):
+
+    res = []        # create result list to add the permute number
+
+    if len(nums) == 1:
+        return [nums]
+
+    for i in range(len(nums)):       # go throught the list and and pop the first elemet
+        n = nums.pop(0)
+        perms = self.permute(nums)        # [2,3] [3,2]  ,....
+
+        for perm in perms:
+            perm.append(n)           # add 1 to each
+
+        res.extend(perms)
+        nums.append(n)
+    return res
+
+
+
+permute(nums)
