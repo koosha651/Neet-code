@@ -42,7 +42,7 @@ for i in nums:
 def subsets(nums):
 
     res = []
-    subset = []                 # create this function to have globaly access
+    subset = []                 # create this subset list to store the subset and has lobaly access
 
     def dfs(i):
         if i >= len(nums):              # if we find out we are out of bounds
