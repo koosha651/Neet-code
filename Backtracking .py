@@ -44,7 +44,7 @@ def subsets(nums):
     res = []
     subset = []                 # create this subset list to store the subset and has lobaly access
 
-    def dfs(i):
+    def dfs(i):                         # use dfs method to travers in the graph
         if i >= len(nums):              # if we find out we are out of bounds
             res.append(subset.copy())           # append the current subset to the result. Add copy version of subset because we frequently add value to subset
             return
