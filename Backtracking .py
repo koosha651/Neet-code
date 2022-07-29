@@ -76,7 +76,7 @@ def subset(candidates, target):
     res = []
 
     def dfs(i , cur , total):
-        if total == target:                  # first base case: if the total sum of value will equal to target
+        if total == target:                  # first base case: if the total sum of value will equal to target, add the current value
             res.append(cur.copy())
             return
         if i >= len(candidates) or total > target:      # second base case: if total value greater that target or the numerator go out of bounds
@@ -115,7 +115,7 @@ def permute(nums):
 
     for i in range(len(nums)):       # go throught the list and and pop the first elemet
         n = nums.pop(0)
-        perms = self.permute(nums)        # [2,3] [3,2]  ,....
+        perms = permute(nums)        # recursively call the function [2,3] [3,2]  ,....
 
         for perm in perms:
             perm.append(n)           # add 1 to each
