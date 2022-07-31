@@ -133,7 +133,7 @@ Output: [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
 
 4. subset II
 
-# in order to prevent
+# this problem is very simal with subset, with little difference in repeatedly elements. in order to prevent duplicate in subset first sort the array .
 
 class Solution:
     def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
@@ -149,13 +149,44 @@ class Solution:
             subset.append(nums[i])
             backtrack(i + 1, subset)
             subset.pop()
+
+
             # All subsets that don't include nums[i]
-            while i + 1 < len(nums) and nums[i] == nums[i + 1]:
+            while i + 1 < len(nums) and nums[i] == nums[i + 1]:     # if the element in array similar to eachother we go to next elemet
                 i += 1
-            backtrack(i + 1, subset)
+            backtrack(i + 1, subset)        # After we reach to unique elemet in sorted array, again apply the
 
         backtrack(0, [])
         return res
 
 
+
+
 #=============================================================================================================================================================================
+
+5.  Combination Sum II
+
+# use the help from 
+
+class Solution:
+    def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
+        res = []
+        candidates.sort()
+
+        def bact(i,cur,total):
+            if total == target:
+                res.append(cur.copy())
+                return
+            if i >= len(candidates) or total > target:
+                return
+
+            cur.append(candidates[i])
+            bact(i+1 , cur, total+candidates[i] )
+            cur.pop()
+
+            while i+1 < len(candidates) and candidates[i] == candidates[i+1]:
+                i+=1
+            bact(i+1 , cur, total)
+
+        bact(0,[],0)
+        return res
