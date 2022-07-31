@@ -11,14 +11,14 @@ if len(nums) != len(set(nums)): #set() prevents redundancy
 # we should create 2 hashmaps and the total time complexity will be O(S + T) which is the iteration in these tow hashmaps. **Downside: potential high memory usage**
 
 
-countS , countT = {},{}     #defining two seperate hash table for each list and check whether they are have same length
+countS , countT = {},{}     #defining two seperate hash table for each list and check whether they are have same length 
 if len(s)!= len(T):
-    return False
-for i in range(len(s)):
+    return False                   
+for i in range(len(s)):              # we can iterate through the list because they have same length
     countS[s[i]] = 1 + countS.get(s[i],0)   #each time we see a character we want to increment that by 1 and 0 if that charecter has not appereard
     countT[t[i]] = 1 + countT.get(t[i],0)
 
-for c in countS:
+for c in countS:                    #next we iterate through the hashmaps & make sure they are same
     if countS[c] != countT.get(c,0):
         return False
 return True
