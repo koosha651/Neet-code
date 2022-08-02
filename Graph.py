@@ -10,3 +10,9 @@ https://stackoverflow.com/questions/10974922/what-is-the-basic-difference-betwee
 
 
 #=============================================================================================================================================================================
+
+
+Sentiment Analysis is a method used for categorizing the text based on polarity of a given
+text at the document a sentence which classifying into positive, negative, or neutral.
+
+https://link.springer.com/content/pdf/10.1007%2F978-3-319-68468-0_1
