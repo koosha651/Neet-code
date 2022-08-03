@@ -25,19 +25,21 @@ graph = {
     'H':['G','F']
         }
 
-visited = []
-queue = []
+visited = []    # List to keep track of visited nodes.
+queue = []       #Initialize a queue
 
-def bfs(visited , queue , node):
+def bfs(visited , queue , node):        # The arguments of the bfs function are the visited list, the graph in the form of a dictionary, and the starting node A
     visited.append(node)
-    queue.append(node)
+    queue.append(node)  #It checks and appends the starting node to the visited list and the queue
 
+
+ # Then, while the queue contains elements, it keeps taking out nodes from the queue, 
+ # appends the neighbors of that node to the queue if they are unvisited, and marks them as visited
+    
     while queue:
         s = queue.pop(0)
         print(s , end=' --> ')
-
-
-
+        
         for neighbor in graph[s]:
             if neighbor not in visited:
                 visited.append(neighbor)
@@ -48,7 +50,9 @@ bfs(visited, queue, 'E')
 
 output: E --> D --> G --> A --> F --> H --> B --> C 
 
+
 > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > >
+
 
 Implementing DFS
 
