@@ -88,4 +88,76 @@ Output: A --> B --> C
 
 1. Number of Islands
 
-ROWS, COLS = len(grid)
+from collections import deque
+
+if not grid:
+    return 0
+    
+rows , cols = len(grid) , len(grid[0])
+visit = set()
+island = 0
+
+def bfs(r,c):
+    
+    if (
+        r not in range(rows)
+        or 
+    q = collections.deque   # create the queue object
+    visit.add(r,c) # add the r,c point. remmember that we use 'add' for set()
+    q.append((r,c))
+    while q:        #if the 'q' is not empty we expand our land
+        row,col = q.popleft()
+           
+         
+for r in range(rows):
+    for c in range(cols):
+        if grid[r][c] == '1' and (r,c) not in visit:
+            bfs(r,c)
+            island += 1
+return island
+
+Input: grid = [
+  ["1","1","1","1","0"],
+  ["1","1","0","1","0"],
+  ["1","1","0","0","0"],
+  ["0","0","0","0","0"]
+]
+class Solution:
+    
+    def dfs(grid, r, c):
+            grid[r][c] = '0'
+            direction = [(r-1, c), (r+1, c), (r, c-1), (r, c+1)]
+            for row , col in direction:
+                if 0 <= row <= rows and 0 < col < cols and grid[row][col] == '1' :    # we want to make sure not go out of bounds
+                    self.dfs(grid , row, col)
+    
+    def numIslands(self, grid: List[List[str]]) -> int:
+                    
+        rows , cols = len(grid) , len(grid[0])
+        island = 0         
+        for r in range(rows):
+            for c in range(cols):
+                if grid[r][c] == '1':
+                    self.dfs(grid, r, c)
+                island += 1
+        return island
+        
+        
+class Solution:
+    def dfs(self, grid, r, c):
+        grid[r][c] = '0'
+        lst = [(r-1, c), (r+1, c), (r, c-1), (r, c+1)]
+        for row, col in lst:
+            if row >= 0 and col >= 0 and row < len(grid) and col < len(grid[row]) and grid[row][col] == '1':
+                self.dfs(grid, row, col)
+    
+
+    def numIslands(self, grid: List[List[str]]) -> int:
+        islands = 0
+        for r in range(len(grid)):
+            for c in range(len(grid[r])):
+                if grid[r][c] == '1':
+                    self.dfs(grid, r, c)
+                    islands += 1
+        return islands
+
