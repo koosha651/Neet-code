@@ -66,18 +66,19 @@ graph = {
 
 visited= set()
 
-def dfs(visited , graph , node):
+def dfs(visited , graph , node):    #The dfs function is called and is passed the visited set, the graph in the form of a dictionary, and A, which is the starting node
 
-    if node not in visited:
+    if node not in visited:         # It first checks if the current node is unvisited - if yes, it is appended in the visited set
         print(node, end= ' --> ')
         visited.add(node)
-        for neighbour in graph[node]:
-            dfs(visited, graph, neighbour)
+        for neighbour in graph[node]:       #Then for each neighbor of the current node, the dfs function is invoked again
+            dfs(visited, graph, neighbour)      #The base case is invoked when all the nodes are visited. The function then returns
 
 dfs(visited, graph, 'A')
 
 Output: A --> B --> C
 
+# time complexity:  O(V + E)    'V' is the number of vertices and 'E' is the number of edges
 
 #=============================================================================================================================================================================
 
