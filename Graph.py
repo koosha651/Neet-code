@@ -88,6 +88,8 @@ Output: A --> B --> C
 
 1. Number of Islands
 
+# iterate through the grid to finds the blocks of '1' we have
+
 Input: grid = [
   ["1","1","0","0","0"],
   ["1","1","0","0","0"],
@@ -97,21 +99,21 @@ Input: grid = [
 
 class Solution:
     def dfs(self, grid, r, c):
-        rows , cols = len(grid) , len(grid[0])
-        grid[r][c] = '0'
-        lst = [(r-1, c), (r+1, c), (r, c-1), (r, c+1)]
-        for row, col in lst:
-            if row >= 0 and col >= 0 and row < rows and col < cols and grid[row][col] == '1':
+        rows , cols = len(grid) , len(grid[0])      # define our row & column
+        grid[r][c] = '0'    #  mark our current index az Zero
+        direction = [(r-1, c), (r+1, c), (r, c-1), (r, c+1)]      # for each position we make DFS check (horizontally or vertically):     left     right     down     up
+        for row, col in direction:
+            if row >= 0 and col >= 0 and row < rows and col < cols and grid[row][col] == '1':# check for not being out of bounds & make sure the next position also be island
                 self.dfs(grid, row, col)
     
 
     def numIslands(self, grid: List[List[str]]) -> int:
         
         islands = 0
-        for r in range(len(grid)):
-            for c in range(len(grid[r])):
+        for r in range(len(grid)):          # iterate through each row
+            for c in range(len(grid[r])):       # iterate through each column
                 if grid[r][c] == '1':
-                    self.dfs(grid, r, c)
+                    self.dfs(grid, r, c)        # we trigger our DFS function to explore all connected island
                     islands += 1
         return islands
 
