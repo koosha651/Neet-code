@@ -8,12 +8,12 @@ if len(nums) != len(set(nums)): #set() prevents redundancy
 #=============================================================================================================================================================================
 
  2. Valid Anagram
-# we should create 2 hashmaps and the total time complexity will be O(S + T) which is the iteration in these tow hashmaps. **Downside: potential high memory usage**
+# we should create 2 hashmaps and the total time complexity will be O(S + T) which is the iteration in these two hashmaps. **Downside: potential high memory usage**
 
 
-countS , countT = {},{}     #defining two seperate hash table for each list and check whether they are have same length 
+countS , countT = {},{}     #defining two separate hash table for each list and check whether they are have same length
 if len(s)!= len(T):
-    return False                   
+    return False
 for i in range(len(s)):              # we can iterate through the list because they have same length
     countS[s[i]] = 1 + countS.get(s[i],0)   #each time we see a character we want to increment that by 1 and 0 if that charecter has not appereard
     countT[t[i]] = 1 + countT.get(t[i],0)
@@ -32,7 +32,7 @@ return sorted(s)==sorted(t)  # use seaching algorithm time complexity O(n^2)
 
 
  3. Two Sum
-# we're looking for indices, so sorting is not necessary. Mostly using dictionary (hastable) helps.
+# we're looking for indices, so sorting is not necessary. Mostly using a dictionary (hashtable) helps.
 # More information in  ( https://leetcode.com/problems/two-sum/discuss/737092/Sum-MegaPost-Python3-Solution-with-a-detailed-explanation )
 
 def Two_sum(nums,target):
@@ -70,7 +70,7 @@ output: {'K': 1, 'o': 2, 's': 1, 'h': 2, 'a': 3, ' ': 1, 'S': 1, 'r': 1, 'i': 2,
 
 # for solving this problem: we create a hashmap and count the number of each charter in each word like eat={'e':1,'a':1,'t':1}then add words with the same combination
 # such as 'ate'. then we use{'e':1,'a':1,'t':1} as key and store the words as values() in our dictionary. the time complexity would be O(m.n) which 'm' is the total
-# number of the input strings, 'n' isavarge len of each word.
+# number of the input strings, and 'n' is the average len of each word.
 
 def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         from collections import defaultdict
@@ -101,7 +101,7 @@ def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
 
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        count = {}  # Use hashmam to count the occurance of element
+        count = {}  # Use hashmap to count the occurrence of element
         freq = [[] for i in range(len(nums) + 1)] # has exact length of the input array, the indexes represent number of occurance and the value are the lsit of number
 
         for n in nums:
@@ -152,7 +152,7 @@ nums = [1,2,3,4]
             prefix *= nums[i]
         postfix = 1             # define initial default value for postfix
         for i in range(len(nums) - 1, -1, -1):          # starting from end of array and decrementer by 1
-            res[i] *= postfix           #for prevents over write we multiple the postfix to previous List
+            res[i] *= postfix           #for prevents overwrite we multiple the postfix to previous List
             postfix *= nums[i]
         return res
 
