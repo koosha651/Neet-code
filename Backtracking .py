@@ -12,7 +12,7 @@ BFS ----- > traversal -------> in a level by level manner                   DFS 
 1. Subsets
 
 # for solving this question there are two ways:
-# for each input we could include it in the subset or not, so for each input we have two choice and for array with 'n' input we have 2^n choice for our subset.
+# for each input we could include it in the subset or not, so for each input we have two choices, and for an array with 'n' input we have a 2^n choice for our subset.
 
 #  first methods:
 
@@ -25,7 +25,7 @@ def subset(nums):
 
 > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > >
 
-# foe more explaination
+# for more explanation
 
 for i in nums:
         res += [lst  for lst in res]            --------> return : [[], [], [], [], [], [], [], []]
@@ -44,7 +44,7 @@ def subsets(nums):
     res = []
     subset = []                 # create this subset list to store the subset and has lobaly access
 
-    def dfs(i):                         # use dfs method to travers in the graph, 'i' is the indext of the value that we make decision about
+    def dfs(i):                         # use dfs method to traverse in the graph, 'i' is the indext of the value that we make decision about
         if i >= len(nums):              # if we find out we are out of bounds
             res.append(subset.copy())           # append the current subset to the result. Add copy version of subset because we frequently add value to subset
             return
@@ -53,7 +53,7 @@ def subsets(nums):
         subset.append(nums[i])
         dfs(i + 1)                      # recursively run dfs on the next element
 
-        # decision NOT to include nums[i]       ,        basicly we skiping the nums[i]
+        # decision NOT to include nums[i]       ,        basically we skipping the nums[i]
         subset.pop()            #  remove of pop the element that already appended
         dfs(i + 1)
 
@@ -66,8 +66,8 @@ def subsets(nums):
 
 2. Combination Sum
 
-# we solve this question recursively. Also, define a additional function and pass few featurs.
-# 'i' represent the which candidate should be choosen / 'cur' represent the values that we already added / 'total' represent the total sum of values in 'cur'
+# we solve this question recursively. Also, define an additional function and pass a few features.
+# 'i' represents the which candidate should be chosen / 'cur' represent the values that we already added / 'total' represent the total sum of values in 'cur'
 
 nums = [5,3,6,7]
 target = 1
@@ -82,7 +82,7 @@ def subset(candidates, target):
         if i >= len(candidates) or total > target:      # second base case: if total value greater that target or the numerator go out of bounds
             return
 
-        # we have two decisions to make : include the value or not
+        # we have two decisions to make: include the value or not
 
         cur.append(candidates[i])
         dfs(i ,cur,total + candidates[i])      # since the total has been changed by adding candidates[i] to 'cur' we change the pass new total
@@ -108,12 +108,12 @@ nums = [1,2,3]
 
 def permute(nums):
 
-    res = []        # create result list to add the permute number
+    res = []        # create a result list to add the permute number
 
     if len(nums) == 1:
         return [nums.copy()]    # ** don not forget to put the copy version of nums
 
-    for i in range(len(nums)):       # go throught the list and and pop the first elemet
+    for i in range(len(nums)):       # go through the list and and pop the first elemet
         n = nums.pop(0)
         perms = permute(nums)        # recursively call the function [2,3] [3,2]  ,....
 
@@ -133,7 +133,7 @@ Output: [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
 
 4. subset II
 
-# this problem is very simal with subset, with little difference in repeatedly elements. in order to prevent duplicate in subset first sort the array .
+# this problem is very simal to subset, with little difference in repeated elements. to prevent duplicates in the subset first sort the array.
 
 class Solution:
     def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
@@ -152,9 +152,9 @@ class Solution:
 
 
             # All subsets that don't include nums[i]
-            while i + 1 < len(nums) and nums[i] == nums[i + 1]:     # if the element in array similar to eachother we go to next elemet
+            while i + 1 < len(nums) and nums[i] == nums[i + 1]:     # if the element in array similar to each other we go to next element
                 i += 1
-            backtrack(i + 1, subset)        # After we reach to unique elemet in sorted array, again apply the
+            backtrack(i + 1, subset)        # After we reach to unique element in sorted array, again apply the
 
         backtrack(0, [])
         return res
@@ -166,7 +166,7 @@ class Solution:
 
 5.  Combination Sum II
 
-# use the help from 
+# use the help from
 
 class Solution:
     def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
