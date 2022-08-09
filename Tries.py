@@ -4,19 +4,19 @@
 
 A Trie (prefix tree) is a special data structure used to store strings that can be visualized like a graph. There are various applications of this data structure, such
 as autocomplete and spellchecker
-Tries is useing for word validation
+Tries are used for word validation
 #=============================================================================================================================================================================
 
-# The child of each node must be unique so at most for each node we have 26 unique child wich represent the lenght of english alphabet. Also, we dealing with 4 sub-function
-# such as insert(), search(), startWith(). one of the advantage of using Tries is the startWith() function, which in compare to array reduce memory usage and time complexity
+# The child of each node must be unique so at most for each node we have 26 unique children which represent the length of the english alphabet. Also, we dealing with 4 sub-function
+# such as insert(), search(), startWith(). one of the advantages of using Tries is the startWith() function, which in comparison to array reduce memory usage and time complexity
 
 
 
 
-class TrieNode:                         # Create seperate class named TriesNode: include children, endOfWord // build constractor for initialize with a base root
+class TrieNode:                         # Create separate class named TriesNode: include children, endOfWord // build contractor for initialize with a base root
     def __init__(self):
         self.children = {}              # each node comes with it's own children. it can be 26 children
-        self.endOfNode = False          # can mark every single word as a last single node as end of a word
+        self.endOfNode = False          # can mark every single word as a last single node as the end of a word
 
 class Trie:
 
@@ -27,13 +27,13 @@ class Trie:
     def insert(self, word: str) -> None:
         cur = self.root                 # initialize our current node to start from the root
 
-        for c in word:                         # go trought every single charecter of the word and check 2 thing: does the charecter already exist or not
+        for c in word:                         # go through every single character of the word and check 2 things: does the character already exist or not
 
-            if c not in cur.children:                    # if the charecter doesn't exist in our current hashmap,
-                cur.children[c] = TrieNode()             # will create a Trie node for that. use charecter as key value and then create empty trie node
+            if c not in cur.children:                    # if the character doesn't exist in our current hashmap,
+                cur.children[c] = TrieNode()             # will create a Trie node for that. use a character as a key value and then create an empty trie node
 
-            cur = cur.children[c]                  # but if the charecter does already exist, set the curent to that node
-        cur.endOfNode = True            # after iterating trough the word, set the last character as end of the word
+            cur = cur.children[c]                  # but if the character does already exist, set the curent to that node
+        cur.endOfNode = True            # after iterating through the word, set the last character as end of the word
 
     def search(self, word: str) -> bool:
         cur = self.root
@@ -42,7 +42,7 @@ class Trie:
             if c not in cur.children:
                 return False
             cur = cur.children[c]
-        return cur.endOfNode            # cur is last element of word. return True if the last current node was end of he node
+        return cur.endOfNode            # cur is the last element of the word. return True if the last current node was the end of the node
 
 
     def startsWith(self, prefix: str) -> bool:
@@ -58,7 +58,7 @@ class Trie:
 
 2.  Design Add and Search Words Data Structure
 
-# except search function all of the code is same
+# except search function all of the code is the same
 # very complex part
 
 https://www.youtube.com/watch?v=BTf05gs_8iU&t=1059s
@@ -101,21 +101,3 @@ class WordDictionary:
             return cur.word
 
         return dfs(0, self.root)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
