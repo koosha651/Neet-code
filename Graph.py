@@ -118,7 +118,7 @@ class Solution:
 Output: 3
 #=============================================================================================================================================================================
 
-2.  Clone Graph
+2. Clone Graph
 # for this question we use hashmap & and DFS. Basically, we map the old Node to the New node. Every time we clone a node, take a look at the neighbor.
 
 """
@@ -146,3 +146,4 @@ class Solution:
 
 
 #=============================================================================================================================================================================
+3. Max Area of Island
