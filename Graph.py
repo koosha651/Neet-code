@@ -131,16 +131,18 @@ class Node:
 
 class Solution:
     def cloneGraph(self, node: 'Node') -> 'Node':
-        oldToNew = {}
+        oldToNew = {}       # create a hashmap & nested in another function
 
         def dfs(node):
-            if node in oldToNew:
+            if node in oldToNew:        # if the node is in the hashmap, means we already clone it and return that clone
                 return oldToNew[node]
 
-            copy = Node(node.val)
-            oldToNew[node] = copy
+            copy = Node(node.val)       # The 'copy' is a new node that we just cloned. if the node is not in the hashmap, we create the copy
+            oldToNew[node] = copy           # in the hashmap set new node(copy) as value for the old node
             for nei in node.neighbors:
                 copy.neighbors.append(dfs(nei))
             return copy
         return dfs(node) if node else None
-        
+
+
+#=============================================================================================================================================================================
