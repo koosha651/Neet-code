@@ -141,9 +141,34 @@ class Solution:
             oldToNew[node] = copy           # in the hashmap set new node(copy) as value for the old node
             for nei in node.neighbors:
                 copy.neighbors.append(dfs(nei))
-            return copy
+            return copy 
         return dfs(node) if node else None
 
 
 #=============================================================================================================================================================================
 3. Max Area of Island
+
+# iterate through the grid as soon as we find the blocks of '1' then apply DFS to calculate area and return that. Also, we want maintain some sort of seen value for islands
+# that we already checked. we simply do that by just get rid of the '1' that visited and converting them to water or '0'
+
+class Solution:
+    
+    def dfs(self, grid, r, c):
+            num = 1
+            grid[r][c] = 0
+            
+            direction = [(r-1, c) , (r+1, c),(r, c-1) ,(r, c+1)  ]
+            for row , col in direction:
+                if row >= 0 and col >= 0 and row < len(grid) and col < len(grid[0]) and grid[row][col] == 1:
+                    num += self.dfs(grid, row , col) 
+            return num        
+    
+    
+    def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
+        AreLand = 0
+        for r in range (len(grid)):
+            for c in range (len(grid[0])):
+                if grid[r][c] == 1:
+                    AreLand = max (AreLand , self.dfs(grid, r, c))
+        return AreLand
+                    
