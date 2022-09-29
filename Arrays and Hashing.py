@@ -80,7 +80,7 @@ def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
 
             for token in word:                    #a=80 ->0, 80 - 80 =0   b=81 ->1, 81 - 80 =0
                 count[ord(token) - ord('a')]+=1   # we are just counting how many charecter we have
-            res[tuple(count)].append(word)        # add the
+            res[tuple(count)].append(word)        # Since in python list can not be keys, we changed the type of 'count' to Tuple. Then we add the word as value to keys
 
         return res.values()
 
