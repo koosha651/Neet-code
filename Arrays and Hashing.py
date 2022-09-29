@@ -97,13 +97,15 @@ def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
 =====================================
 [100]  , [2] , [1] ,  [] , []  ,  []
 
+ Also know that : freq = [[] for i in range (4)] --> [[], [], [], []]
+
 
 
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
         count = {}  # Use hashmap to count the occurrence of element
         freq = [[] for i in range(len(nums) + 1)] # has exact length of the input array, the indexes represent number of occurance and the value are the lsit of number
-
+                                                    #
         for n in nums:
             count[n] = 1 + count.get(n, 0)
         for n, c in count.items():
