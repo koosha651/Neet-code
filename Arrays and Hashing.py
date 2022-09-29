@@ -36,7 +36,7 @@ return sorted(s)==sorted(t)  # use seaching algorithm time complexity O(n^2)
 # More information in  ( https://leetcode.com/problems/two-sum/discuss/737092/Sum-MegaPost-Python3-Solution-with-a-detailed-explanation )
 
 def Two_sum(nums,target):
-    seen={}
+    seen={}         # value : Index
     for index , value in enumerate (nums) :    # enumerate gives U both index and value of element
         remain = target - nums[index]          # Since remaining + value = target
         if remain in seen:
