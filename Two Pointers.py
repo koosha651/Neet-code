@@ -61,6 +61,7 @@ def two_sum(num,t):
 #=============================================================================================================================================================================
 
 3. 3Sum
+
  # By sorting the Array O(n log n) for find the First number and use 2 loops to find the two Sum by two pointers, total time complexity will be : O (n log n) + O (n^2) which
  # will be O (n^2)
 
@@ -95,3 +96,30 @@ def threeSum(self, nums: List[int]) -> List[List[int]]:
     return res
 
 Output: [[-1,-1,2],[-1,0,1]]
+
+
+
+#=============================================================================================================================================================================
+
+11. Container With Most Water
+
+# for solving this question show look at the pattern between heights. 
+
+height = [1,8,6,2,5,4,8,3,7]
+
+
+def maxArea(height):
+    # BRUTE FORCE
+    res = 0
+    
+    for l in range(len(height)):
+        for r in range(l+1 , len(height)):
+            area = (r-l) * min(height[l], height[r])
+            res = max(res, area)
+    return res
+
+maxArea(height)
+
+# TIME COMPLEXITY = O(n^2)
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
