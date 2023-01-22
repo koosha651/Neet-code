@@ -8,7 +8,7 @@ if len(nums) != len(set(nums)): #set() prevents redundancy
 #=============================================================================================================================================================================
 
  2. Valid Anagram
-# we should create 2 hashmaps and the total time complexity will be O(S + T) which is the iteration in these two hashmaps. **Downside: potential high memory usage**
+# we should create 2 hashmaps and the total time complexity will be O(S + T) which belong to the iteration for each two hashmaps. **Downside: potential high memory usage**
 
 
 countS , countT = {},{}     #defining two separate hash table for each list and check whether they are have same length
