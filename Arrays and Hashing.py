@@ -54,15 +54,15 @@ Two_sum(nums,9)
  4.  Group Anagrams
 # Need to know Defaultdic: https://www.youtube.com/watch?v=zTHtUm4AtcA
 
-Name= 'Hashing technique'                      from collections import defaultdict
+Name= 'Hashing technique'                      from collections import defaultdict                                                      Name= 'Hashing technique'
 
-seen={}                                        Name= 'Hashing technique'
+seen={}                                        Name= 'Hashing technique'                                                                count={}
 for char in name:                              seen={}
-    if char not in seen:
-
-        seen[char]=1                           seen=defaultdict(int)   or    seen=defaultdict(lambda:0) # gives the intial value
-
-    else:                                      for char in name:
+    if char not in seen:                                                                                                                for i in range(len(strs)):       
+                                                                                                                                                cont[strs[i]] = 1 + cont.get(strs[i],0) 
+        seen[char]=1                           seen=defaultdict(int)   or    seen=defaultdict(lambda:0) # gives the intial value                
+                                                                                                                                        print(count)
+    else:                                      for char in name:                        
         seen[char]+=1                               seen[char]+=1
 
 output: {'K': 1, 'o': 2, 's': 1, 'h': 2, 'a': 3, ' ': 1, 'S': 1, 'r': 1, 'i': 2, 'f': 1, 'n': 1}
