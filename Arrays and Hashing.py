@@ -58,18 +58,18 @@ Name= 'Hashing technique'                      from collections import defaultdi
 
 seen={}                                        Name= 'Hashing technique'                                                                count={}
 for char in name:                              seen={}
-    if char not in seen:                                                                                                                for i in range(len(strs)):       
-                                                                                                                                                cont[strs[i]] = 1 + cont.get(strs[i],0) 
-        seen[char]=1                           seen=defaultdict(int)   or    seen=defaultdict(lambda:0) # gives the intial value                
+    if char not in seen:                                                                                                                for i in range(len(strs)):
+                                                                                                                                                cont[strs[i]] = 1 + cont.get(strs[i],0)
+        seen[char]=1                           seen=defaultdict(int)   or    seen=defaultdict(lambda:0) # gives the intial value
                                                                                                                                         print(count)
-    else:                                      for char in name:                        
+    else:                                      for char in name:
         seen[char]+=1                               seen[char]+=1
 
 output: {'K': 1, 'o': 2, 's': 1, 'h': 2, 'a': 3, ' ': 1, 'S': 1, 'r': 1, 'i': 2, 'f': 1, 'n': 1}
 
 
 # for solving this problem: we create a hashmap and count the number of each charter in each word like eat={'e':1,'a':1,'t':1}then add words with the same combination
-# such as 'ate'. then we use{'e':1,'a':1,'t':1} as key and store the words as values() in our dictionary. the time complexity would be O(m.n) which 'm' is the total
+# such as 'ate'. then we use{'e':1,'a':1,'t':1} as key and store the words as values() in our dictionary. the time complexity would be O(m.n + m.26) which 'm' is the total
 # number of the input strings, and 'n' is the average len of each word.
 
 def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
