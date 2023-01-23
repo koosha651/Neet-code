@@ -93,7 +93,7 @@ def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
 # There are several methods to solve this problem such as heap max O(k log n), and bucket sort O(n). in Bucket sort the first row of the array represents the number of
 # occurrences of each element, and the second row is the elements whit the same number of occurrence. For Array like : [1 , 2, 1, 1, 100, 2] we have:
 
- [1]   , [2] , [3] , [4] , [5],  [6]     count   
+ [1]   , [2] , [3] , [4] , [5],  [6]     count
 =====================================
 [100]  , [2] , [1] ,  [] , []  ,  []     values
 
@@ -105,7 +105,7 @@ class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
         count = {}  # Use hashmap to count the occurrence of element
         freq = [[] for i in range(len(nums) + 1)] # has exact length of the input array, the indexes represent number of occurance and the value are the lsit of number
-                                                    #
+                                                    
         for n in nums:
             count[n] = 1 + count.get(n, 0)
         for n, c in count.items():
