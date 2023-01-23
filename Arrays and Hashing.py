@@ -105,11 +105,12 @@ class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
         count = {}  # Use hashmap to count the occurrence of element
         freq = [[] for i in range(len(nums) + 1)] # has exact length of the input array, the indexes represent number of occurance and the value are the lsit of number
-                                                    
+
         for n in nums:
             count[n] = 1 + count.get(n, 0)
-        for n, c in count.items():
-            freq[c].append(n)   # our output right here is [[], [3], [], [1, 2], [], [], [], []] and we have to go through the array
+        for n, c in count.items(): # for every number and count in array
+            freq[c].append(n)   # in here we swap the count as key() and values as values()
+                                # our output right here is [[], [3], [], [1, 2], [], [], [], []] and we have to go through the array
 
 
         res = []
