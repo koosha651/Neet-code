@@ -93,9 +93,9 @@ def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
 # There are several methods to solve this problem such as heap max O(k log n), and bucket sort O(n). in Bucket sort the first row of the array represents the number of
 # occurrences of each element, and the second row is the elements whit the same number of occurrence. For Array like : [1 , 2, 1, 1, 100, 2] we have:
 
- [1]   , [2] , [3] , [4] , [5],  [6]
+ [1]   , [2] , [3] , [4] , [5],  [6]     count   
 =====================================
-[100]  , [2] , [1] ,  [] , []  ,  []
+[100]  , [2] , [1] ,  [] , []  ,  []     values
 
  Also know that : freq = [[] for i in range (4)] --> [[], [], [], []]
 
