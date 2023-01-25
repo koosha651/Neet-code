@@ -72,7 +72,7 @@ def threeSum(self, nums: List[int]) -> List[List[int]]:
     nums.sorted()         # The time complexity of sorting the array:  O(n log n)
 
     for index , value in enumerate(nums):
-        if index > 0 and nums[index] == nums[index-1]:   # after sorting, check if the previous number are the same, also check if 'i' will not be a first position
+        if index > 0 and nums[index] == nums[index-1]:   # after sorting, check if 'i' will not be a first position, also check if the previous number are the same
             continue
 
         l,r = index+1 , len(nums)-1      # define two Pointers
@@ -129,10 +129,10 @@ height = [1,8,6,2,5,4,8,3,7]
 def maxArea(height):
     
     res = 0
-    l,r = 0 , len(height)-1
+    l,r = 0 , len(height)-1     # two pointers, left init as 0, right init as size-1
     
     while l< r:
-        area = (r-l) * min(height[l], height[r])
+        area = (r-l) * min(height[l], height[r])    # (width between) * (minimum height of the leftmost stick and rightmost stick)
         res = max(res, area)
         if height[l] < height[r]:
             l += 1
