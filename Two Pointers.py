@@ -65,9 +65,9 @@ def two_sum(num,t):
  # By sorting the Array O(n log n) for find the First number and use 2 loops to find the two Sum by two pointers, total time complexity will be : O (n log n) + O (n^2) which
  # will be O (n^2)
  
- # sort() ----> sort the list in-place & returning None (can only be used with lists)
+ # sort() ----> sort the list in-place & returning None (can only be used with lists)  : nums.sort()
  
- # sorted() -----> sort the list & return a new sorted list
+ # sorted() -----> sort the list & return a new sorted list : sorted(a)
 
 Input: nums = [-1,0,1,2,-1,-4]
 
