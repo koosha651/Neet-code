@@ -52,11 +52,11 @@ input: s = "abcabcbb"                                                           
                                                                                                             chat = set()
 def lengthOfLongestSubstring(s: str) -> int:                                                                for i in range(len(s)):
         charSet = set()    # use set() to prevent duolicate in sub set sequence
-        l = 0                                                                                                    chat.add(s[i])
+        l = 0        #  the left will be assign to '0'                                                                                          chat.add(s[i])
         res = 0                                                                                             print(chat)
         
-        for r in range(len(s)):                                                                            Output: {'a', 'c', 'b'}
-            while s[r] in charSet:                                                                          
+        for r in range(len(s)):        # the 'r' will contiguously change                                   Output: {'a', 'c', 'b'}
+            while s[r] in charSet:       # if we get to a duplicate we have to update our window and our set.                                                                  
                 charSet.remove(s[l])                                                                    
                 l += 1                                                                  
             charSet.add(s[r])                                                                           
