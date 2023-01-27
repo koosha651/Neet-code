@@ -2,18 +2,18 @@
 # NeetCode Challenge
 # Solving Problems from NeetCode website, Sliding Window
 
-# the way we can recognize these problems: 
-things we iterate over sequentially: 
+# the way we can recognize these problems:
+things we iterate over sequentially:
     * the contiguous sequence of element
     * string, arrays, linked list
-    
+
  type of question that is usually asked is:
-    * asked about min, max, longest, shortest, whether contain 
-    * maybe we have to calculate something 
+    * asked about min, max, longest, shortest, whether contain
+    * maybe we have to calculate something
 
 
 #=============================================================================================================================================================================
-  
+
 
 
 https://www.youtube.com/watch?v=MK-NZ4hN7rs
@@ -27,7 +27,7 @@ https://www.youtube.com/watch?v=MK-NZ4hN7rs
 Input: prices = [7,1,5,3,6,4]
 
 class Solution:                                                                                                 def maxProfit(self, prices: List[int]) -> int:
-    def maxProfit(prices):                                                                                                    res = 0   
+    def maxProfit(prices):                                                                                                    res = 0
     l , r = 0 , 1 # left is buy.  right is sell                                                                               l = 0
     maxP = 0
                                                                                                                               for r in range(1, len(prices)):
@@ -46,7 +46,7 @@ Output: 5
 
 2. Longest Substring Without Repeating Characters
 
-# using sliding window to reduce the time and memory to O(n)
+# using sliding window to reduce the time and memory to O(n). because every elementthat we have in array could be unique
 
 input: s = "abcabcbb"                                                                                       s = "abcabcbb"
                                                                                                             chat = set()
@@ -54,13 +54,13 @@ def lengthOfLongestSubstring(s: str) -> int:                                    
         charSet = set()    # use set() to prevent duolicate in sub set sequence
         l = 0                                                                                                    chat.add(s[i])
         res = 0                                                                                             print(chat)
-        
+
         for r in range(len(s)):                                                                            Output: {'a', 'c', 'b'}
-            while s[r] in charSet:                                                                          
-                charSet.remove(s[l])                                                                    
-                l += 1                                                                  
-            charSet.add(s[r])                                                                           
-            res = max(res, r - l + 1)   #find the curent window size by 'r - l +1'                                                                   
+            while s[r] in charSet:
+                charSet.remove(s[l])
+                l += 1
+            charSet.add(s[r])
+            res = max(res, r - l + 1)   #find the curent window size by 'r - l +1'
         return res
 
 Output: 3
@@ -69,27 +69,27 @@ Output: 3
 3. Longest Repeating Character Replacement
 
 # we have to use hashmap to store the frequency of alphabet element. How we decide choose the dominet element depends on the most frequent element in our current window. Every
-# time we most evaluate this condition that: size of current window  - number of frequency of of top character < = k . If that was passed then we increment the right pointer 
-# unles increment left pointer. 
+# time we most evaluate this condition that: size of current window  - number of frequency of of top character < = k . If that was passed then we increment the right pointer
+# unles increment left pointer.
 
 input: s='ababba'
 
 def characterReplacement(self, s: str, k: int) -> int:
-        count = {}   # create hashmap to count the occurance of each element 
-        res = 0     # give us the longest sub-string 
-        
+        count = {}   # create hashmap to count the occurance of each element
+        res = 0     # give us the longest sub-string
+
         l = 0 #left pointer
-        
+
         for r in range(len(s)):
             count[s[r]] = 1 + count.get(s[r], 0)
-            
+
             if (r - l + 1) - max(count.values()) > k:   #evaluate the condition and make sure its valid
                 count[s[l]] -= 1
                 l += 1
-            
+
             res = max(res, r - l + 1)       #if it passed the condition choose the maximum lenght of substring
         return res
-        
+
 output: 5       time complexity: O(26n) 26 position for 26 alphabet
 
 #=============================================================================================================================================================================
