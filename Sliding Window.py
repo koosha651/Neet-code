@@ -58,7 +58,7 @@ def lengthOfLongestSubstring(s: str) -> int:                                    
 
         for r in range(len(s)):        # the 'r' will contiguously change
             while s[r] in charSet:       # if we get to a duplicate we have to update our window and our set.
-                charSet.remove(s[l])
+                charSet.remove(s[l])    # update the set by remove the most left element
                 l += 1
             charSet.add(s[r])
             res = max(res, r - l + 1)   #find the curent window size by 'r - l +1'
