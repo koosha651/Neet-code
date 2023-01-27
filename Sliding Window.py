@@ -52,7 +52,7 @@ input: s = "abcabcbb"                                                           
                                                                                                             chat = set()
 def lengthOfLongestSubstring(s: str) -> int:                                                                for i in range(len(s)):
         charSet = set()    # use set() to prevent duolicate in sub set sequence
-        l = 0        #  the left will be assign to '0'                                                                 
+        l = 0        #  the left will be assign to '0'
         res = 0                                                                                             print(chat) ------> Output: {'a', 'c', 'b'}
 
 
