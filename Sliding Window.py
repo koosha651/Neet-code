@@ -46,7 +46,7 @@ Output: 5
 
 2. Longest Substring Without Repeating Characters
 
-# using sliding window to reduce the time and memory to O(n). because every elementthat we have in array could be unique
+# using sliding window to reduce the time to O(n). because every elementthat we have in array could be unique and for that reason it takes O(n) as well.
 
 input: s = "abcabcbb"                                                                                       s = "abcabcbb"
                                                                                                             chat = set()
