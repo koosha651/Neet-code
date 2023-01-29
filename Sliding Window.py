@@ -94,3 +94,12 @@ def characterReplacement(self, s: str, k: int) -> int:
 output: 5       time complexity: O(26n) 26 position for 26 alphabet
 
 #=============================================================================================================================================================================
+
+4. Permutation in String
+
+from collections import Counter
+
+s = "abcabcbb"
+print(Counter(s))
+
+Output: Counter({'b': 4, 'a': 2, 'c': 2})
