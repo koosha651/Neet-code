@@ -6,7 +6,7 @@
 
 def parentheses(s):
     stack = []
-    closeToOpen = {']': '[', ')' : '(', '}' : '{'}
+    closeToOpen = {']': '[', ')' : '(', '}' : '{'}      # the keys in our map are closing parantheses we need to make sure if the stack is not empty
 
     for c in s:
         if c in closeToOpen:  # If the 'c' considers as closing character, because the keys in dictionary are closing character
