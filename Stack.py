@@ -9,7 +9,7 @@ def parentheses(s):
     closeToOpen = {']': '[', ')' : '(', '}' : '{'}      # the keys in our map are closing parantheses we need to make sure if the stack is not empty
 
     for c in s:
-        if c in closeToOpen:  # If the 'c' considers as closing character, because the keys in dictionary are closing character
+        if c in closeToOpen:  # If the 'c' considers as closing character, because the keys in dictionary are closing character (it is only check 'c' with the dict keys)
             if stack and stack[-1] == closeToOpen[c]:     # if stack passed when stack was not empty, also it make sure at top of stack the 'c' maching the open parantheses
                 stack.pop()
             else:
