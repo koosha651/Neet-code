@@ -45,7 +45,7 @@ class MinStack:
         self.stack.append(val)
         val= min(val , self.minstack[-1] if self.minstack else val)   #update the min value in minstack/ choose between min of value and top of stack, if the stack is non 
                                                                       # empty. If it is empty, we take the min of val and val
-        self.minstack.append(val)       # if minstack is emptywe append the value to it
+        self.minstack.append(val)       # if minstack is emptywe append the value to it 
 
     def pop(self) -> None:
         self.stack.pop()
