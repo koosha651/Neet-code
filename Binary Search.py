@@ -83,7 +83,7 @@ searchmatrix(matrix , target)
 # the time complexity for each
 #============================================================================================================================================================================
 
-2. Koko Eating Bananas
+3. Koko Eating Bananas
 
 # there are tow ways to solve this problem:     1) brute force algorithm             2) Binary search
 # 1) we are going to try every single value from one, all the way up until the max value of piles in array,like: [1, ...... , 11] and the time complexity is : O(max(p) * p)
