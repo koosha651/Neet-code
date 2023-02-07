@@ -11,6 +11,7 @@ Binary search algorithm basic ideas:
 
 #=============================================================================================================================================================================
 
+# the time complexity for binary search is (log N), since the while loop is going to run as long as we can divide the input array by 2.
 
 1. Binary search
 
