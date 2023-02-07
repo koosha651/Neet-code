@@ -16,22 +16,17 @@ Binary search algorithm basic ideas:
 1. Binary search
 
 def search(nums, t):
-    l, r=0, len(nums)-1
+    l, r = 0, len(nums) - 1
 
-
-    while(l <= r):
-        mid=int((l+r)/2)
-
-        if nums[mid] == t:
-            return mid
-        elif nums[mid] < t:
-            l=mid +1
-
+    while l <= r:
+        m = l + ((r - l) // 2)  # (l + r) // 2 can lead to overflow. we take R and minus it by L so we get half of distance between L & R Then we add it to left for middle
+        if nums[m] > target:
+            r = m - 1
+        elif nums[m] < target:
+            l = m + 1
         else:
-            r= mid - 1
+            return m
     return -1
-
-
 
 
 
