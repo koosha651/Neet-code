@@ -36,4 +36,32 @@ class Solution:
  #=============================================================================================================================================================================
 2. Merge Two Sorted Lists
 
-# Linked Lists with Dummy Nodes: https://www.youtube.com/watch?v=3O_f_sk3mFc&t=12s
+
+# for solving this QUESTION we used the dummy node:  Linked Lists with Dummy Nodes: https://www.youtube.com/watch?v=3O_f_sk3mFc&t=12s
+
+
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def mergeTwoLists(self, list1: ListNode, list2: ListNode) -> ListNode:
+        dummy = ListNode()      #create a dummy and do not worry about edge cases of inserting into a empty list
+        tail = dummy            # connect the dummy node to the tail
+
+        while list1 and list2:
+            if list1.val < list2.val:
+                tail.next = list1
+                list1 = list1.next
+            else:
+                tail.next = list2
+                list2 = list2.next
+            tail = tail.next
+
+        if list1:
+            tail.next = list1
+        elif list2:
+            tail.next = list2
+
+        return dummy.next
