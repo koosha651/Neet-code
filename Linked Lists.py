@@ -50,7 +50,7 @@ class Solution:
         dummy = ListNode()      #create a dummy and do not worry about edge cases of inserting into a empty list
         tail = dummy            # connect the dummy node to the tail
 
-        while list1 and list2:
+        while list1 and list2:      #for iterating through these two list the condition is both of them are non empty
             if list1.val < list2.val:
                 tail.next = list1
                 list1 = list1.next
