@@ -37,6 +37,3 @@ class Solution:
 2. Merge Two Sorted Lists
 
 # Linked Lists with Dummy Nodes: https://www.youtube.com/watch?v=3O_f_sk3mFc&t=12s
-
-
-https://www.youtube.com/watch?v=VBIal5x6wtM&list=PL0hSJrxggIQqGFRO7hNbp3sy7H_q21flC&index=32
