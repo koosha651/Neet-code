@@ -51,15 +51,15 @@ class Solution:
         tail = dummy            # connect the dummy node to the tail
 
         while list1 and list2:      #for iterating through these two list the condition is both of them are non empty
-            if list1.val < list2.val:
-                tail.next = list1
-                list1 = list1.next
+            if list1.val < list2.val:       # check the value in each lists
+                tail.next = list1   # import the list 1 to tail
+                list1 = list1.next       #update a list1 to next Node
             else:
                 tail.next = list2
                 list2 = list2.next
-            tail = tail.next
+            tail = tail.next          #update a tail to next Node
 
-        if list1:
+        if list1:       #we check if either of list still has value and in that case add them to end of the tail
             tail.next = list1
         elif list2:
             tail.next = list2
