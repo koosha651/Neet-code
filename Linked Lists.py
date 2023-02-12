@@ -104,17 +104,17 @@ class Solution:
 
 4. Remove Nth Node From End of List
 
-# For solving this question at first you might think by reversing the list and start from end and we dont need to do that. what we we need to do is use two pointers method
-# we creat dummy node and define gape between left and right pointer by 'n' distance.
+# For solving this question at first, you might think by reversing the list and starting from the end; we don't need to do that. what we need to do is use two pointers method
+# We create a dummy node and define the gap between the left and right pointer by 'n' distance.
 
-# 1- define dummy node      2. define 'n' distance gap between l and r      3. update Pointers       4.  delete the desiere Node
+# 1- define dummy node      2. define 'n' distance gap between l and r      3. update Pointers       4.  delete the desired Node
 
- # Total time complexity is : O(n)
+ # Total time complexity is: O(n)
 
 
 class Solution:
     def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
-        dummy = ListNode(0, head) # define dummy node with the value of 0 and next pointer will be head
+        dummy = ListNode(0, head) # define dummy node with the value of 0 and the next pointer will be head
         left = dummy        # assigne left and right pointers
         right = head
 
@@ -122,7 +122,7 @@ class Solution:
             right = right.next
             n -= 1
 
-        while right:        # until the right pointer not equal to Nall continue update the pointers
+        while right:        # until the right pointer is not equal to Nall continue updating the pointers
             left = left.next
             right = right.next
 
