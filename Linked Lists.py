@@ -182,10 +182,10 @@ class Solution:
 6. Add Two Numbers
 
 """
-This question contain lots of edge cases that need to be coutioous about:
-    - for each digit we have to create separate node like: 34 --> _ _ (2 digit)
-    - if either of two number has a different size like: 12 + 1245
-    - Use a carry to store the second digit after sumup two numbers like: '1'4 = 5 + 9 ('1' is carry )
+This question contains lots of edge cases that need to be addressed:
+    - for each digit, we have to create separate nodes like: 34 --> _ _ (2 digits)
+    - if either of the two numbers has a different size like: 12 + 1245
+    - Use a carry to store the second digit after sum up two numbers like: '1'4 = 5 + 9 ('1' is carry )
 """
 
 1. create a dummy node  2.
@@ -197,7 +197,7 @@ This question contain lots of edge cases that need to be coutioous about:
 class Solution:
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
         dummy = ListNode()
-        cur = dummy     # current pointer is point at the position that we inserting a new node or new digit into / also if our carry is not Null we continue the loop eg(7 + 8)
+        cur = dummy     # current pointer is the point at the position that we inserting a new node or new digit into / also if our carrier is not Null we continue the loop eg(7 + 8)
 
         carry = 0
         while l1 or l2 or carry:            # we will iterate through each list until either of them has a digit
@@ -205,7 +205,7 @@ class Solution:
             v2 = l2.val if l2 else 0
 
             # compute the new digit
-            val = v1 + v2 + carry       # after this we can have new carry, so:
+            val = v1 + v2 + carry       # after this we can have a new carry, so:
             carry = val // 10       # we have to get the carry out of that
             val = val % 10
             cur.next = ListNode(val)    # now we can insert a new list node with the value that we just computed
@@ -216,3 +216,7 @@ class Solution:
             l2 = l2.next if l2 else None
 
         return dummy.next
+
+
+
+ #=============================================================================================================================================================================
