@@ -138,18 +138,18 @@ class Solution:
 # we iterate two times through the list:
 
 # First loop for creating a deep copy of the nodes by using hashmap to map the original node to the new node.
-# second loop for connecting pointers and leveraging the hashmap to connect every old node to a new node
+# Second loop for connecting pointers and leveraging the hashmap to connect every old node to a new node
 
 # 1- create hashmap for deep copy     2. iterate through 1sth loop for copy     3. iterate through 2end loop for setting Pointers
-"""
 
+"""
+"""
 class Node:
     def __init__(self, x: int, next: 'Node' = None, random: 'Node' = None):
         self.val = int(x)
         self.next = next
         self.random = random
 """
-
 
 class Solution:
     def copyRandomList(self, head: "Node") -> "Node":
@@ -181,4 +181,8 @@ class Solution:
 
 6. Add Two Numbers
 
-# this question contain lots of edge cases that need to be coutioous about:
+""" This question contain lots of edge cases that need to be coutioous about:
+for each digit we have to create separate node
+if either oftwo number has a different size
+Use a carry to store the Second digit like: '1'4 = 5 + 9 ('1' is carry )
+"""
