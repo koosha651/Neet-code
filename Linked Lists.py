@@ -135,7 +135,10 @@ class Solution:
 
 5. Copy List with Random Pointer
 
-#
+# we iterate two time through the list:
+
+# First loop for creating a deep copy of the nodes by using hashmap to map the original node to new node.
+# second loop for connecting pointers and laverage the hashmap to connect every old node to new node
 
 
 """
@@ -150,9 +153,11 @@ class Node:
 
 class Solution:
     def copyRandomList(self, head: "Node") -> "Node":
-        oldToCopy = {None: None}
+        oldToCopy = {None: None}        # create hashmap for mapping
 
         cur = head
+
+        # First loop for creating a deep copy
         while cur:
             copy = Node(cur.val)
             oldToCopy[cur] = copy
