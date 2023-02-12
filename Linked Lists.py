@@ -181,8 +181,9 @@ class Solution:
 
 6. Add Two Numbers
 
-""" This question contain lots of edge cases that need to be coutioous about:
-for each digit we have to create separate node
-if either oftwo number has a different size
-Use a carry to store the Second digit like: '1'4 = 5 + 9 ('1' is carry )
+"""
+This question contain lots of edge cases that need to be coutioous about:
+    - for each digit we have to create separate node
+    - if either oftwo number has a different size
+    - Use a carry to store the Second digit like: '1'4 = 5 + 9 ('1' is carry )
 """
