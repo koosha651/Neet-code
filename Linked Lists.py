@@ -140,7 +140,7 @@ class Solution:
 # First loop for creating a deep copy of the nodes by using hashmap to map the original node to new node.
 # second loop for connecting pointers and laverage the hashmap to connect every old node to new node
 
-
+# 1- cretae hashmap for deep copy     2. define 'n' distance gap between l and r      3. update Pointers       4.  delete the desired Node
 """
 
 class Node:
@@ -154,7 +154,6 @@ class Node:
 class Solution:
     def copyRandomList(self, head: "Node") -> "Node":
         oldToCopy = {None: None}        # create hashmap for mapping
-
         cur = head
 
         # First loop for creating a deep copy
@@ -162,7 +161,10 @@ class Solution:
             copy = Node(cur.val)
             oldToCopy[cur] = copy
             cur = cur.next
-        cur = head
+
+        cur = head      # reassigning the curent to head
+
+        # second loop for set next & random pointers
         while cur:
             copy = oldToCopy[cur]
             copy.next = oldToCopy[cur.next]
