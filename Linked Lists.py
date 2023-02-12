@@ -118,11 +118,11 @@ class Solution:
         left = dummy        # assigne left and right pointers
         right = head
 
-        while n > 0:        # until
+        while n > 0:        # continue to shift until 'n' be Zero
             right = right.next
             n -= 1
 
-        while right:
+        while right:        # until 
             left = left.next
             right = right.next
 
