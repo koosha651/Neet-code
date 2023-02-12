@@ -17,7 +17,7 @@ class Solution:
 
         prev, cur = None, head
 
-        while cur:          # we want to keep going untill we reach the end of the List
+        while cur:          # we want to keep going until we reach the end of the List
 
             # locate next hoppoing node
             next_hop = cur.next
@@ -98,3 +98,34 @@ class Solution:
             first.next = second
             second.next = tmp1
             first, second = tmp1, tmp2
+
+
+ #=============================================================================================================================================================================
+
+4. Remove Nth Node From End of List
+
+# For solving this question at first you might think by reversing the list and start from end and we dont need to do that. what we we need to do is use two pointers method
+# we creat dummy node and define gape between left and right pointer by 'n' distance.
+
+# 1- define dummy node      2.
+
+ # Total time complexity is : O(n)
+
+
+class Solution:
+    def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
+        dummy = ListNode(0, head) # define dummy node with the value of 0 and next pointer will be head
+        left = dummy        # assigne left and right pointers
+        right = head
+
+        while n > 0:        # until
+            right = right.next
+            n -= 1
+
+        while right:
+            left = left.next
+            right = right.next
+
+        # delete
+        left.next = left.next.next
+        return dummy.next
