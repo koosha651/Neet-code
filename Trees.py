@@ -85,16 +85,16 @@ class Solution:
 #=============================================================================================================================================================================
 4. Balanced Binary Tree
 
-#we recursivly start from bottum on the tree and return two value. first value is bolian value(true/false)that tell if the node is balance and the hight of the current node.
+#we recursively start from the bottom of the tree and return two values. The first value is the boolean value(true/false)that tells if the node is balanced and the height of the current node.
 
 class Solution:
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
 
-        def dfs(root):  # this function return pair of values, boolean and the hight of a tree. [bolian value(whetherthe tree is balance or not) , current hight of Tree]
+        def dfs(root):  # this function return pair of values, a boolean, and the height of a tree. [bolian value(whether the tree is balanced or not) , current hight of Tree]
             if not root: return [True, 0]       # since empty tree means balance, then return true for that.
 
             left, right = dfs(root.left), dfs(root.right)       #allocate the value for hight of left and right subtree
-            balanced = (left[0] and right[0] and    #check the difference of the two leaf will not be more that 1, also check if the left and right leaf are already Balanced
+            balanced = (left[0] and right[0] and    #check the difference of the two leaves will not be more than 1, also check if the left and right leaves are already Balanced
                         abs(left[1] - right[1]) <= 1)
             return [balanced, 1 + max(left[1], right[1])]
         return dfs(root)[0]
@@ -104,8 +104,8 @@ class Solution:
 
 5. Same Tree
 
-# Ceck the structure of two Trees must be same 'number of Nodes' , 'number of left and right children' , 'the value of left and right children'. Also,We use DFS and recursive
-# method. the Time complexity is O(p , q). in worst case we have to travers both tress completely
+# Ceck the structure of two Trees must be the same 'number of Nodes', 'number of left and right children', and 'the value of left and right children'. Also, We use DFS and the recursive
+# method. the Time complexity is O(p, q). in the worst case we have to traverse both tress completely
 
 class Solution:
     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
@@ -113,7 +113,7 @@ class Solution:
             return True
         if not p or not q or p.val != q.val :           # if one of them is null // and neither of values are same then -------> False
             return False
-        return (self.isSameTree(p.left , q.left) and            # (use recursive method) if the both of the Right subtree and left subtree are the same ----->  True
+        return (self.isSameTree(p.left , q.left) and            # (use recursive method) if both of the Right subtree and left subtree are the same ----->  True
                 self.isSameTree(p.right, q.right))
 
 
