@@ -184,6 +184,35 @@ class Solution:
 """
 This question contain lots of edge cases that need to be coutioous about:
     - for each digit we have to create separate node
-    - if either oftwo number has a different size
+    - if either of two number has a different size
     - Use a carry to store the Second digit like: '1'4 = 5 + 9 ('1' is carry )
 """
+
+1. create a dummy node  2.
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
+        dummy = ListNode()
+        cur = dummy     # current pointer is point at the position that we inserting a new node or new digit into
+
+        carry = 0
+        while l1 or l2 or carry:            # we will iterate through each list until either of them has a digit
+            v1 = l1.val if l1 else 0    # v1 is going to be the digit of list 1 only if l1 is not Null / else will set it to Zero
+            v2 = l2.val if l2 else 0
+
+            # compute the new digit
+            val = v1 + v2 + carry       # after this we can have new carry
+            carry = val // 10
+            val = val % 10
+            cur.next = ListNode(val)
+
+            # update ptrs
+            cur = cur.next
+            l1 = l1.next if l1 else None
+            l2 = l2.next if l2 else None
+
+        return dummy.next
