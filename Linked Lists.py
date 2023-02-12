@@ -69,3 +69,6 @@ class Solution:
  #=============================================================================================================================================================================
 
 3. Reorder List
+
+
+# we solve this question in 3 steps         1. Finding the middle       2. reversing the pointers in the second half of list        3. merging two half
