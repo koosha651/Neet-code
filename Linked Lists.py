@@ -109,8 +109,6 @@ class Solution:
 
 # 1- define dummy node      2. define 'n' distance gap between l and r      3. update Pointers       4.  delete the desired Node
 
- # Total time complexity is: O(n)
-
 
 class Solution:
     def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
@@ -129,3 +127,8 @@ class Solution:
         # delete
         left.next = left.next.next      #L      ---->  # L -> 2 -> 3 duble shift
         return dummy.next
+
+
+ # Total time complexity is: O(n)
+
+ #=============================================================================================================================================================================
