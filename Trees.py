@@ -44,7 +44,7 @@ Output: [4,7,2,9,6,3,1]
 
 # there are 3 ways to solve:   1. recursive DFS         2. Iterative DFS            3. BFS
 
-#1. recursive DFS: in this method start from the root & and look for max for leaf and in each node '1 + max( DFS(left) , DFS(right) )'. Time complexity & memory usage = O(n)
+#1. recursive DFS: in this method start from the root & and look for max for the leaf and in each node '1 + max( DFS(left), DFS(right) )'. Time complexity & memory usage = O(n)
 
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
@@ -57,7 +57,7 @@ class Solution:
 
 3. Diameter of Binary Tree
 
-# Using Recursive Approach to calculating the Diameter of Binary Tree
+# Using a Recursive Approach to calculating the Diameter of a Binary Tree
 # https://leetcode.com/problems/diameter-of-binary-tree/discuss/1515564/Python-Easy-to-understand-solution-w-Explanation
 # The depth of a node is the number of edges from the node to the tree's root node
 # The height of a node is the number of edges on the longest path from the node to a leaf.
@@ -72,8 +72,8 @@ class Solution:
         def dfs(root):
             if not root:
                  return 0
-            left = dfs(root.left)           # recurcivly find the hight of left sub tree
-            right = dfs(root.right)         # recurcivly find the hight of right sub tree
+            left = dfs(root.left)           # recurcivly find the hight of left subtree
+            right = dfs(root.right)         # recurcivly find the hight of right subtree
             res[0] = max(res[0], left + right)          # calculating the diameter by adding two hight
 
             return 1 + max (right , left)           #return the hights
