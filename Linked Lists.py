@@ -107,7 +107,7 @@ class Solution:
 # For solving this question at first you might think by reversing the list and start from end and we dont need to do that. what we we need to do is use two pointers method
 # we creat dummy node and define gape between left and right pointer by 'n' distance.
 
-# 1- define dummy node      2.
+# 1- define dummy node      2. define 'n' distance gap between l and r      3. update Pointers       4.  delete the desiere Node
 
  # Total time complexity is : O(n)
 
@@ -122,10 +122,10 @@ class Solution:
             right = right.next
             n -= 1
 
-        while right:        # until 
+        while right:        # until the right pointer not equal to Nall continue update the pointers
             left = left.next
             right = right.next
 
         # delete
-        left.next = left.next.next
+        left.next = left.next.next      #L      ---->  # L -> 2 -> 3 duble shift
         return dummy.next
