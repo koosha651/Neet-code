@@ -177,3 +177,8 @@ class Solution:
  # Total time complexity is: O(n)
 
  #=============================================================================================================================================================================
+
+
+6. Add Two Numbers
+
+# this question contain lots of edge cases that need to be coutioous about:
