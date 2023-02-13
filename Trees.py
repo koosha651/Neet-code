@@ -56,6 +56,10 @@ class Solution:
         return 1 + max(self.maxDepth(root.left) , self.maxDepth(root.right))
 
 
+
+# Total time complexity is : O(n)
+# Total memory complexity :  the height of tree / in worst case is O(n)
+
 #=============================================================================================================================================================================
 
 3. Diameter of Binary Tree
@@ -75,11 +79,11 @@ class Solution:
         def dfs(root):
             if not root:
                  return 0
-            left = dfs(root.left)           # recurcivly find the hight of left subtree
-            right = dfs(root.right)         # recurcivly find the hight of right subtree
-            res[0] = max(res[0], left + right)          # calculating the diameter by adding two hight
+            left = dfs(root.left)           # recurcivly find the height of left subtree
+            right = dfs(root.right)         # recurcivly find the height of right subtree
+            res[0] = max(res[0], left + right)          # calculating the diameter by adding two height
 
-            return 1 + max (right , left)           #return the hights
+            return 1 + max (right , left)           #return the heights
 
         dfs (root)
         return res[0]
@@ -93,10 +97,10 @@ class Solution:
 class Solution:
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
 
-        def dfs(root):  # this function return pair of values, a boolean, and the height of a tree. [bolian value(whether the tree is balanced or not) , current hight of Tree]
+        def dfs(root):  # this function return pair of values, a boolean, and the height of a tree. [bolian value(whether the tree is balanced or not) , current height of Tree]
             if not root: return [True, 0]       # since empty tree means balance, then return true for that.
 
-            left, right = dfs(root.left), dfs(root.right)       #allocate the value for hight of left and right subtree
+            left, right = dfs(root.left), dfs(root.right)       #allocate the value for height of left and right subtree
             balanced = (left[0] and right[0] and    #check the difference of the two leaves will not be more than 1, also check if the left and right leaves are already Balanced
                         abs(left[1] - right[1]) <= 1)
             return [balanced, 1 + max(left[1], right[1])]
