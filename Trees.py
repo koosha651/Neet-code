@@ -32,8 +32,9 @@ class Solution:
         root.left = root.right
         root.right = tmp
 
-        self.invertTree(root.left)
-        self.invertTree(root.right)
+         # all we have to do is recursively Invert the subtree
+        self.invertTree(root.left)              # Invert the left subtree
+        self.invertTree(root.right)             # Invert the right subtree
         return root
 
 
