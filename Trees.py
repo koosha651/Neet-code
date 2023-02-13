@@ -4,6 +4,8 @@
 
 https://www.youtube.com/watch?v=7tCNu4CnjVc
 
+https://www.educative.io/answers/how-to-implement-depth-first-search-in-python  ---------> Implement DFS
+
 https://www.educative.io/answers/how-to-implement-a-breadth-first-search-in-python -------->  Implement BFS
 
 1. Invert Binary Tree
