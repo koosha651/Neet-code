@@ -20,6 +20,8 @@ https://www.youtube.com/watch?v=MK-NZ4hN7rs
 
 1. Best Time to Buy and Sell Stock
 
+1. set the left and right Pointers and current profit                2. set the bounds for right pointer            3.define conditions for calculating profit and replace it
+
 # since we use tow pointer technique instead using array the memory usage is O(1)
 # the time complexity will be linear because we used tow pointer technique                                                          second method
 
