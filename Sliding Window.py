@@ -49,7 +49,7 @@ Output: 5
 
 # using sliding window to reduce the time to O(n). because every elementthat we have in array could be unique and for that reason it takes O(n) as well.
 
-"""1. create a set to prevent redundancy / set the left & current longest substring & right go through list   3.define conditions for if we get duplicatewe update window set"""
+"""1. create a set to prevent redundancy / set the left & current longest substring & right go through list  2.define conditions for if we get duplicatewe update window set"""
 
 input: s = "abcabcbb"                                                                                       s = "abcabcbb"
                                                                                                             chat = set()
@@ -76,6 +76,11 @@ Output: 3
 # time we most evaluate this condition that: size of current window  - number of frequency of of top character < = k . If that was passed then we increment the right pointer
 # unles increment left pointer.
 
+"""
+1. create hashmap to store char frequency
+2.
+"""
+
 input: s='ababba'
 
 def characterReplacement(self, s: str, k: int) -> int:
@@ -94,7 +99,7 @@ def characterReplacement(self, s: str, k: int) -> int:
             res = max(res, r - l + 1)       #if it passed the condition choose the maximum lenght of substring
         return res
 
-output: 5       time complexity: O(26n) 26 position for 26 alphabet
+output: 5   #    time complexity: O(26n) 26 position for 26 alphabet
 
 #=============================================================================================================================================================================
 
