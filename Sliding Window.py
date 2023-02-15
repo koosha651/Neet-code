@@ -49,6 +49,8 @@ Output: 5
 
 # using sliding window to reduce the time to O(n). because every elementthat we have in array could be unique and for that reason it takes O(n) as well.
 
+"""1. create a set to prevent redundancy / set the left & current longest substring & right go through list   3.define conditions for if we get duplicatewe update window set"""
+
 input: s = "abcabcbb"                                                                                       s = "abcabcbb"
                                                                                                             chat = set()
 def lengthOfLongestSubstring(s: str) -> int:                                                                for i in range(len(s)):
@@ -62,7 +64,7 @@ def lengthOfLongestSubstring(s: str) -> int:                                    
                 charSet.remove(s[l])    # update the set by remove the most left element
                 l += 1
             charSet.add(s[r])
-            res = max(res, r - l + 1)   #find the curent window size by 'r - l +1'
+            res = max(res, r - l + 1)   #find the current window size by 'r - l +1'
         return res
 
 Output: 3
