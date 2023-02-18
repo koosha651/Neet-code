@@ -78,7 +78,8 @@ Output: 3
 
 """
 1. create hashmap to store char frequency
-2.
+2. find the char frequency
+3. evaluate the condition: size of current window  - number of frequency of of top character < = k 
 """
 
 input: s='ababba'
