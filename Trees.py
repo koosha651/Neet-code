@@ -10,7 +10,7 @@ https://www.educative.io/answers/how-to-implement-a-breadth-first-search-in-pyth
 
 1. Invert Binary Tree
 
-# the conceot is to visit every single node in the tree and then if each of these nodes has children, we must swap their children. So we can sove this problem with recursion
+# the concept is to visit every single node in the tree and then if each of these nodes has children, we must swap their children. So we can sove this problem with recursion
 # as DFS
 
 
@@ -81,7 +81,7 @@ class Solution:
                  return 0
             left = dfs(root.left)           # recurcivly find the height of left subtree
             right = dfs(root.right)         # recurcivly find the height of right subtree
-            res[0] = max(res[0], left + right)          # calculating the diameter by adding two height
+            res[0] = max(res[0], 2 + left + right)          # calculating the diameter by adding two height
 
             return 1 + max (right , left)           #return the heights
 
