@@ -10,7 +10,7 @@ https://www.educative.io/answers/how-to-implement-a-breadth-first-search-in-pyth
 
 1. Invert Binary Tree
 
-# the concept is to visit every single node in the tree and then if each of these nodes has children, we must swap their children. So we can sove this problem with recursion
+# the concept is to visit every single node in the tree and then if each of these nodes has children, we must swap their children. So we can solve this problem with recursion
 # as DFS
 
 
