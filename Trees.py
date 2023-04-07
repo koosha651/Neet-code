@@ -129,6 +129,20 @@ class Solution:
 
 6.  Subtree of Another Tree
 
+# we have one helper function name 'sametree' which responsiable for evaluating if two tree are the same. 
+# t -------> subtree
+# s -------> tree
+"""
+#1 define the sametree function
+    - return preconditions (if both trees are Null)
+    - return preconditions (if both trees are valid)
+        - return if both left & right are sametree
+    - return if all of above conditions are wrong 
+    
+#2  define preconditions (if s | t are null )
+
+"""
+
 class Solution:
     def isSubtree(self, s: TreeNode, t: TreeNode) -> bool:
         if not t: return True
